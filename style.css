@@ -25,6 +25,7 @@
   --bg-dark: #f8f9ff;
   --bg-light: #f0f4ff;
   --bg-card: #ffffff;
+  --bg-toggle: #dbdee7;
 
   --text: #0a0a12;
   --text-light: #4a4a6a;
@@ -78,6 +79,7 @@
   --bg-dark: #12121f;
   --bg-light: #1a1a2e;
   --bg-card: #1a1a2e;
+  --bg-toggle: #3e3e60;
 
   --text: #ffffff;
   --text-light: #a0a0c0;
@@ -219,7 +221,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-light);
+  background-color: var(--bg-toggle);
   transition: var(--transition);
 }
 
@@ -227,6 +229,95 @@ nav {
   transform: scale(1.1);
   background-color: var(--primary);
   color: white;
+}
+
+/* Переключатель языка */
+.language-switch {
+  display: flex;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 32px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-toggle);
+  border-radius: 34px;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 3px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 50%;
+  transition: var(--transition);
+  z-index: 2;
+}
+
+input:checked + .slider:before {
+  transform: translateX(38px);
+}
+
+.lang-text {
+  font-size: 0.7rem;
+  font-weight: 600;
+  transition: var(--transition);
+  z-index: 1;
+}
+
+.lang-text.ru {
+  color: var(--text);
+  opacity: 1;
+}
+
+.lang-text.en {
+  color: var(--text);
+  opacity: 1;
+}
+
+input:checked + .slider .lang-text.ru {
+  color: var(--text);
+  opacity: 1;
+}
+
+input:checked + .slider .lang-text.en {
+  color: white;
+  opacity: 1;
+}
+
+/* Анимация для переключателя */
+.switch:hover .slider:before {
+  transform: scale(1.1);
+}
+
+.switch:hover input:checked + .slider:before {
+  transform: translateX(38px) scale(1.1);
 }
 
 .important-notice {
@@ -1670,7 +1761,7 @@ footer::before {
     flex-direction: column;
   }
 
-  .nav-links {
+  .nav-link {
     display: none;
   }
 

@@ -1,6 +1,6 @@
 {
-  "latest_version": "0.9.0",
-  "min_required_version": "0.9.0",
+  "latest_version": "1.0.0",
+  "min_required_version": "1.0.0",
   "download_url": "https://bereznyak72.github.io/blockchat-site/#download",
-  "release_notes": "• Релиз v0.9.0"
+  "release_notes": "• Релиз v1.0.0"
 }
