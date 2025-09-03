@@ -33,13 +33,22 @@
       <nav>
         <div class="logo">
           <div class="logo-icon">
-            <img src="images/logo-white.png" width="30px">
+            <img src="images/logo-white.png" width="30px"/>
           </div>
           <span>BlockChat</span>
         </div>
         <div class="nav-links">
-          <a href="#how-it-works" class="nav-link">Как подключиться</a>
-          <a href="#download" class="nav-link">Скачать</a>
+          <a href="#how-it-works" class="nav-link" data-lang="howitworks">Как подключиться</a>
+          <a href="#download" class="nav-link" data-lang="download">Скачать</a>
+          <div class="language-switch">
+            <label class="switch">
+              <input type="checkbox" id="langToggle">
+              <span class="slider">
+                <span class="lang-text ru">RU</span>
+                <span class="lang-text en">EN</span>
+              </span>
+            </label>
+          </div>
           <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -58,18 +67,18 @@
     </div>
     <section class="hero">
       <div class="container">
-        <h1>Приватность в каждом сообщении</h1>
-        <p>BlockChat — это мессенджер с прямой peer-to-peer связью между пользователями. Ваши сообщения передаются напрямую, без хранения на серверах.</p>
+        <h1 data-lang="privacy">Приватность в каждом сообщении</h1>
+        <p data-lang="about">BlockChat — это мессенджер с прямой peer-to-peer связью между пользователями. Ваши сообщения передаются напрямую, без хранения на серверах.</p>
         <div class="cta-buttons">
-          <a href="#download" class="btn btn-primary">
+          <a href="#download" class="btn btn-primary" data-lang="download">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 16L12 4M12 16L8 12M12 16L16 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               <path d="M4 20H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
             </svg>
             Скачать
           </a>
-          <a href="#how-it-works" class="btn btn-secondary">Как подключиться</a>
-          <a href="https://github.com/bereznyak72/blockchat-releases/issues/new?template=bug_report.md" class="btn btn-secondary" target="_blank">Сообщить об ошибке</a>
+          <a href="#how-it-works" class="btn btn-secondary" data-lang="howitworks">Как подключиться</a>
+          <a href="https://github.com/bereznyak72/blockchat-releases/issues/new?template=bug_report.md" class="btn btn-secondary" target="_blank" data-lang="report">Сообщить об ошибке</a>
         </div>
       </div>
       <div class="app-showcase">
@@ -81,7 +90,7 @@
             <span>BlockChat</span>
           </div>
           <div style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--accent-dark);">
-            <span>Защищено</span>
+            <span data-lang="protected">Защищено</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
@@ -89,19 +98,19 @@
         </div>
         <div class="app-content" id="chatContainer">
           <div class="message other-message">
-            <div class="message-text">Привет! Сигнальный сервер запускается автоматически.</div>
+            <div class="message-text" data-lang="message1">Привет! Сигнальный сервер запускается автоматически.</div>
             <div class="message-time">10:30</div>
           </div>
           <div class="message my-message">
-            <div class="message-text">Отлично! Просто введи IP-адрес собеседника.</div>
+            <div class="message-text" data-lang="message2">Отлично! Просто введи IP-адрес собеседника.</div>
             <div class="message-time">10:31</div>
           </div>
           <div class="message other-message">
-            <div class="message-text">P2P соединение установлено! Сообщения идут напрямую.</div>
+            <div class="message-text" data-lang="message3">P2P соединение установлено! Сообщения идут напрямую.</div>
             <div class="message-time">10:32</div>
           </div>
           <div class="typing-indicator" id="typingIndicator">
-            <span>Собеседник печатает</span>
+            <span data-lang="interlocutor">Собеседник печатает</span>
             <div class="typing-indicator-dots">
               <div class="typing-indicator-dot"></div>
               <div class="typing-indicator-dot"></div>
@@ -110,19 +119,20 @@
           </div>
         </div>
         <div class="message-limit" id="messageLimit">
-          Осталось сообщений: <span id="messagesLeft">7</span>/10
+          <span data-lang="messagelimit">Осталось сообщений: </span>
+          <span id="messagesLeft">7</span>/10
         </div>
         <div class="chat-controls">
-          <input type="text" class="chat-input" placeholder="Введите сообщение..." id="chatInput">
-          <button class="send-btn" id="sendBtn">Отправить</button>
+          <input type="text" class="chat-input" data-lang="enter" placeholder="Введите сообщение..." id="chatInput">
+          <button class="send-btn" id="sendBtn" data-lang="send">Отправить</button>
         </div>
       </div>
     </section>
     <section id="features" class="features">
       <div class="container">
         <div class="section-title fade-in">
-          <h2>Особенности BlockChat</h2>
-          <p>Уникальные возможности нашего P2P мессенджера</p>
+          <h2 data-lang="features">Особенности BlockChat</h2>
+          <p data-lang="uniquefeatures">Уникальные возможности нашего P2P мессенджера</p>
         </div>
         <div class="important-notice fade-in">
           <div class="notice-icon">
@@ -131,12 +141,12 @@
             </svg>
           </div>
           <div class="notice-content">
-            <h3>Важная информация</h3>
+            <h3 data-lang="importantinformation">Важная информация</h3>
             <ul>
-              <li>Работает в локальной сети (LAN) <span class="badge-new">НОВОЕ: вне локальной сети через Radmin VPN</span></li>
-              <li>Требует стабильного IP для подключения</li>
-              <li>Сигнальный сервер автоматически запускается на порту 8080</li>
-              <li>Поддержка только текстовых сообщений (пока!)</li>
+              <li data-lang="lan">Работает в локальной сети (LAN) <span class="badge-new" data-lang="newlan">НОВОЕ: вне локальной сети через Radmin VPN</span></li>
+              <li data-lang="ip">Требует стабильного IP для подключения</li>
+              <li data-lang="port">Сигнальный сервер автоматически запускается на порту 8080</li>
+              <li data-lang="textmessages">Поддержка только текстовых сообщений (пока!)</li>
             </ul>
           </div>
         </div>
@@ -147,8 +157,8 @@
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
-            <h3>Безопасность и приватность</h3>
-            <p>Ваши сообщения никогда не хранятся на серверах. Вся переписка остается только между участниками беседы.</p>
+            <h3 data-lang="safety">Безопасность и приватность</h3>
+            <p data-lang="correspondence">Ваши сообщения никогда не хранятся на серверах. Вся переписка остается только между участниками беседы.</p>
           </div>
           <div class="feature-card fade-in">
             <div class="feature-icon">
@@ -157,8 +167,8 @@
                 <path d="M8 12H16M12 8V16" stroke="white" stroke-width="2" stroke-linecap="round" />
               </svg>
             </div>
-            <h3>Прямое P2P соединение</h3>
-            <p>После установки связи через сигнальный сервер, сообщения передаются напрямую между устройствами без промежуточных серверов.</p>
+            <h3 data-lang="connection">Прямое P2P соединение</h3>
+            <p data-lang="thesignalserver">После установки связи через сигнальный сервер, сообщения передаются напрямую между устройствами без промежуточных серверов.</p>
           </div>
           <div class="feature-card fade-in">
             <div class="feature-icon">
@@ -166,8 +176,8 @@
                 <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
-            <h3>Мгновенная доставка</h3>
-            <p>Сообщения доставляются мгновенно благодаря прямому соединению между пользователями. Никаких задержек на серверах.</p>
+            <h3 data-lang="delivery">Мгновенная доставка</h3>
+            <p data-lang="instantly">Сообщения доставляются мгновенно благодаря прямому соединению между пользователями. Никаких задержек на серверах.</p>
           </div>
           <div class="feature-card fade-in">
             <div class="feature-icon">
@@ -176,8 +186,8 @@
                 <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8m-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7"/>
               </svg>
             </div>
-            <h3>Поддержка Markdown в сообщениях</h3>
-            <p>Форматируйте текст легко и быстро! BlockChat поддерживает Markdown-разметку для создания <strong>жирного</strong> и <em>курсивного</em> текста, списков, цитат и многого другого.</p>
+            <h3 data-lang="markdown">Поддержка Markdown в сообщениях</h3>
+            <p data-lang="formatting">Форматируйте текст легко и быстро! BlockChat поддерживает Markdown-разметку для создания <strong>жирного</strong> и <em>курсивного</em> текста, списков, цитат и многого другого.</p>
           </div>
           <div class="feature-card fade-in">
             <div class="feature-icon">
@@ -186,8 +196,8 @@
                 <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
-            <h3>Простой интерфейс</h3>
-            <p>Интуитивно понятный интерфейс позволяет легко настроить соединение и начать общение без сложных настроек.</p>
+            <h3 data-lang="interface">Простой интерфейс</h3>
+            <p data-lang="intuitiveinterface">Интуитивно понятный интерфейс позволяет легко настроить соединение и начать общение без сложных настроек.</p>
           </div>
           <div class="feature-card fade-in">
             <div class="feature-icon">
@@ -195,8 +205,8 @@
                 <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
-            <h3>Кроссплатформенность</h3>
-            <p>Доступно для Windows, Linux и macOS. Общайтесь с пользователями разных операционных систем.</p>
+            <h3 data-lang="crossplatform">Кроссплатформенность</h3>
+            <p data-lang="availability">Доступно для Windows, Linux и macOS. Общайтесь с пользователями разных операционных систем.</p>
           </div>
         </div>
       </div>
@@ -204,45 +214,45 @@
     <section id="how-it-works" class="how-it-works">
       <div class="container">
         <div class="section-title fade-in">
-          <h2>Как подключиться</h2>
-          <p>Простой процесс установки защищенного P2P-соединения</p>
+          <h2 data-lang="howitworks">Как подключиться</h2>
+          <p data-lang="process">Простой процесс установки защищенного P2P-соединения</p>
         </div>
         <div class="steps">
           <div class="step fade-in">
             <div class="step-number">1</div>
             <div class="step-content">
-              <h3>Запустите BlockChat на обоих устройствах</h3>
-              <p>Сигнальный сервер запускается автоматически при необходимости. Больше не нужно запускать его вручную!</p>
+              <h3 data-lang="launch">Запустите BlockChat на обоих устройствах</h3>
+              <p data-lang="thesignalserver">Сигнальный сервер запускается автоматически при необходимости. Больше не нужно запускать его вручную!</p>
             </div>
           </div>
           <div class="step fade-in">
             <div class="step-number">2</div>
             <div class="step-content">
-              <h3>Обменяйтесь IP-адресами</h3>
-              <p>Один пользователь становится инициатором (подключается), другой - ресивером (ожидает подключения). Обменяйтесь IP-адресами.</p>
+              <h3 data-lang="ipaddresses">Обменяйтесь IP-адресами</h3>
+              <p data-lang="initiator">Один пользователь становится инициатором (подключается), другой - ресивером (ожидает подключения). Обменяйтесь IP-адресами.</p>
             </div>
           </div>
           <div class="step fade-in">
             <div class="step-number">3</div>
             <div class="step-content">
-              <h3>Установите P2P соединение</h3>
-              <p>После обмена сигналами через автоматически запущенный сервер устанавливается прямое соединение между устройствами.</p>
+              <h3 data-lang="p2pconnection">Установите P2P соединение</h3>
+              <p data-lang="signalexchange">После обмена сигналами через автоматически запущенный сервер устанавливается прямое соединение между устройствами.</p>
             </div>
           </div>
           <div class="step fade-in">
             <div class="step-number">4</div>
             <div class="step-content">
-              <h3>Начните общение</h3>
-              <p>Наслаждайтесь безопасным общением напрямую! Сообщения передаются без промежуточных серверов.</p>
+              <h3 data-lang="communication">Начните общение</h3>
+              <p data-lang="safecommunication">Наслаждайтесь безопасным общением напрямую! Сообщения передаются без промежуточных серверов.</p>
             </div>
           </div>
         </div>
         <div class="network-tips fade-in">
-          <h3>Советы по подключению:</h3>
+          <h3 data-lang="connectiontips">Советы по подключению:</h3>
           <ul>
-            <li>Для связи вне локальной сети используйте Radmin VPN или аналогичные решения</li>
-            <li>Убедитесь, что брандмауэр разрешает соединения на порту 8080</li>
-            <li>Используйте статические IP-адреса для стабильного соединения</li>
+            <li data-lang="connectionsoutside">Для связи вне локальной сети используйте Radmin VPN или аналогичные решения</li>
+            <li data-lang="firewall">Убедитесь, что брандмауэр разрешает соединения на порту 8080</li>
+            <li data-lang="staticipaddresses">Используйте статические IP-адреса для стабильного соединения</li>
           </ul>
         </div>
       </div>
@@ -250,8 +260,8 @@
     <section id="backlog" class="backlog">
       <div class="container">
         <div class="section-title fade-in">
-          <h2>Дорожная карта разработки</h2>
-          <p>Наш путь к созданию идеального P2P мессенджера</p>
+          <h2 data-lang="roadmap">Дорожная карта разработки</h2>
+          <p data-lang="ourway">Наш путь к созданию идеального P2P мессенджера</p>
         </div>
         <div class="backlog-timeline">
           <div class="timeline-line"></div>
@@ -263,10 +273,10 @@
               </div>
               <div class="backlog-content">
                 <div class="backlog-header">
-                  <h3 class="backlog-title">Базовая P2P-архитектура</h3>
-                  <span class="status-badge status-completed">Завершено</span>
+                  <h3 class="backlog-title" data-lang="basicp2p">Базовая P2P-архитектура</h3>
+                  <span class="status-badge status-completed" data-lang="completed">Завершено</span>
                 </div>
-                <p class="backlog-description">
+                <p class="backlog-description" data-lang="realization">
                   Реализовано прямое соединение между пользователями с использованием WebRTC и simple-peer библиотеки.
                 </p>
               </div>
@@ -277,10 +287,10 @@
               </div>
               <div class="backlog-content">
                 <div class="backlog-header">
-                  <h3 class="backlog-title">Автоматический сигнальный сервер</h3>
-                  <span class="status-badge status-completed">Завершено</span>
+                  <h3 class="backlog-title" data-lang="signalserver">Автоматический сигнальный сервер</h3>
+                  <span class="status-badge status-completed" data-lang="completed">Завершено</span>
                 </div>
-                <p class="backlog-description">
+                <p class="backlog-description" data-lang="startsautomatically">
                   Сервер теперь запускается автоматически! Больше не нужно запускать его вручную.
                 </p>
               </div>
@@ -291,10 +301,10 @@
               </div>
               <div class="backlog-content">
                 <div class="backlog-header">
-                  <h3 class="backlog-title">End-to-end шифрование</h3>
-                  <span class="status-badge status-completed">Завершено</span>
+                  <h3 class="backlog-title" data-lang="endtoend">End-to-end шифрование</h3>
+                  <span class="status-badge status-completed" data-lang="completed">Завершено</span>
                 </div>
-                <p class="backlog-description">
+                <p class="backlog-description" data-lang="implementingencryption">
                   Внедрение шифрования сообщений для полной конфиденциальности переписки.
                 </p>
               </div>
@@ -305,10 +315,10 @@
               </div>
               <div class="backlog-content release-content">
                 <div class="backlog-header">
-                  <h3 class="backlog-title">Выпуск v1.0.0</h3>
-                  <span class="status-badge status-release">РЕЛИЗ</span>
+                  <h3 class="backlog-title" data-lang="release1">Выпуск v1.0.0</h3>
+                  <span class="status-badge status-release" data-lang="release">РЕЛИЗ</span>
                 </div>
-                <p class="backlog-description">
+                <p class="backlog-description" data-lang="firststable">
                   Первый стабильный релиз BlockChat! Доступно для скачивания на Windows и Linux с базовым P2P функционалом.
                 </p>
                 <div class="release-badges">
@@ -327,10 +337,10 @@
               </div>
               <div class="backlog-content">
                 <div class="backlog-header">
-                  <h3 class="backlog-title">Отправка файлов</h3>
-                  <span class="status-badge status-progress">В разработке</span>
+                  <h3 class="backlog-title" data-lang="sendingfiles">Отправка файлов</h3>
+                  <span class="status-badge status-progress" data-lang="indevelopment">В разработке</span>
                 </div>
-                <p class="backlog-description">
+                <p class="backlog-description" data-lang="filefunctionality">
                   Разработка функционала для отправки файлов собеседнику через P2P соединение.
                 </p>
               </div>
@@ -347,10 +357,10 @@
               </div>
               <div class="backlog-content">
                 <div class="backlog-header">
-                  <h3 class="backlog-title">Подключение вне локальной сети</h3>
-                  <span class="status-badge status-planned">Запланировано</span>
+                  <h3 class="backlog-title" data-lang="offline">Подключение вне локальной сети</h3>
+                  <span class="status-badge status-planned" data-lang="planned">Запланировано</span>
                 </div>
-                <p class="backlog-description">
+                <p class="backlog-description" data-lang="offlinetechnologies">
                   Разработка технологии для подключения вне локальной сети без использования сторонних програм.
                 </p>
               </div>
@@ -366,10 +376,10 @@
               </div>
               <div class="backlog-content release-content">
                 <div class="backlog-header">
-                  <h3 class="backlog-title">Выпуск v2.0.0</h3>
-                  <span class="status-badge status-release">Запланировано</span>
+                  <h3 class="backlog-title" data-lang="release2">Выпуск v2.0.0</h3>
+                  <span class="status-badge status-release" data-lang="planned">Запланировано</span>
                 </div>
-                <p class="backlog-description">
+                <p class="backlog-description" data-lang="secondrelease">
                   Второй стабильный релиз BlockChat! Доступно для скачивания на Windows и Linux с расширенным P2P функционалом.
                 </p>
                 <div class="release-badges">
@@ -388,10 +398,10 @@
               </div>
               <div class="backlog-content">
                 <div class="backlog-header">
-                  <h3 class="backlog-title">Групповые чаты</h3>
-                  <span class="status-badge status-planned">Запланировано</span>
+                  <h3 class="backlog-title" data-lang="groupchats">Групповые чаты</h3>
+                  <span class="status-badge status-planned" data-lang="planned">Запланировано</span>
                 </div>
-                <p class="backlog-description">
+                <p class="backlog-description" data-lang="functionalgroups">
                   Разработка функционала для создания групповых чатов с поддержкой нескольких участников.
                 </p>
               </div>
@@ -407,10 +417,10 @@
               </div>
               <div class="backlog-content">
                 <div class="backlog-header">
-                  <h3 class="backlog-title">Мобильное приложение</h3>
-                  <span class="status-badge status-planned">Запланировано</span>
+                  <h3 class="backlog-title" data-lang="mobileapp">Мобильное приложение</h3>
+                  <span class="status-badge status-planned" data-lang="planned">Запланировано</span>
                 </div>
-                <p class="backlog-description">
+                <p class="backlog-description" data-lang="mobiledevelopment">
                   Разработка мобильных версий BlockChat для iOS и Android с полной совместимостью.
                 </p>
               </div>
@@ -426,10 +436,10 @@
               </div>
               <div class="backlog-content release-content">
                 <div class="backlog-header">
-                  <h3 class="backlog-title">Выпуск v3.0.0</h3>
-                  <span class="status-badge status-release">Запланировано</span>
+                  <h3 class="backlog-title" data-lang="release3">Выпуск v3.0.0</h3>
+                  <span class="status-badge status-release" data-lang="planned">Запланировано</span>
                 </div>
-                <p class="backlog-description">
+                <p class="backlog-description" data-lang="secondstablerelease">
                   Второй стабильный релиз BlockChat! Доступно для скачивания на всех устройствах с расширенным P2P функционалом.
                 </p>
                 <div class="release-badges">
@@ -444,19 +454,19 @@
     <section id="download" class="features" style="background: var(--bg);">
       <div class="container">
         <div class="section-title fade-in">
-          <h2>Начните использовать BlockChat сегодня</h2>
-          <p>Присоединяйтесь к сообществу пользователей, ценящих прямое общение без посредников</p>
+          <h2 data-lang="startusing">Начните использовать BlockChat сегодня</h2>
+          <p data-lang="joincommunity">Присоединяйтесь к сообществу пользователей, ценящих прямое общение без посредников</p>
         </div>
         <div style="text-align: center;" class="fade-in">
           <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;">
-            <a href="https://github.com/bereznyak72/blockchat-releases/releases/download/v0.9.0/BlockChat.Setup.0.9.0.exe" class="btn btn-primary">
+            <a href="https://github.com/bereznyak72/blockchat-releases/releases/download/v1.0.0/BlockChat.Setup.1.0.0.exe" class="btn btn-primary" data-lang="windows">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 16L12 4M12 16L8 12M12 16L16 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M4 20H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
               </svg>
               Скачать для Windows
             </a>
-            <a href="https://github.com/bereznyak72/blockchat-releases/releases/download/v0.9.0/BlockChat-0.9.0.AppImage" class="btn btn-primary">
+            <a href="https://github.com/bereznyak72/blockchat-releases/releases/download/v1.0.0/BlockChat-1.0.0.AppImage" class="btn btn-primary" data-lang="linux">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 16L12 4M12 16L8 12M12 16L16 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M4 20H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -471,7 +481,7 @@
     <div id="modal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h3>Временно недоступно</h3>
+          <h3 data-lang="temporarilyunavailable">Временно недоступно</h3>
           <button class="modal-close" onclick="closeModal()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -484,7 +494,7 @@
               <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <p>Данная функция находится в разработке. Мы работаем над улучшением сайта и скоро добавим эту возможность.</p>
+          <p data-lang="featuredevelopment">Данная функция находится в разработке. Мы работаем над улучшением сайта и скоро добавим эту возможность.</p>
         </div>
         <div class="modal-footer">
           <button class="btn btn-primary" onclick="closeModal()">Понятно</button>
@@ -496,7 +506,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-column">
-            <h3>Разработчики:</h3>
+            <h3 data-lang="developers">Разработчики:</h3>
             <ul class="footer-links">
               <a href="https://bereznyak72.github.io/" class="developer-link" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
@@ -519,26 +529,27 @@
             </ul>
           </div>
           <div class="footer-column">
-            <h3>Продукт</h3>
+            <h3 data-lang="product">Продукт</h3>
             <ul class="footer-links">
-              <li><a href="#features">Особенности</a></li>
-              <li><a href="#how-it-works">Как подключиться</a></li>
-              <li><a href="#backlog">Бэклог</a></li>
+              <li><a href="#features" data-lang="features">Особенности</a></li>
+              <li><a href="#how-it-works" data-lang="howitworks">Как подключиться</a></li>
+              <li><a href="#backlog" data-lang="backlog">Бэклог</a></li>
             </ul>
           </div>
           <div class="footer-column">
-            <h3>Поддержка</h3>
+            <h3 data-lang="support">Поддержка</h3>
             <ul class="footer-links">
-              <li><a href="https://github.com/bereznyak72/blockchat-releases/issues/new?template=bug_report.md" target="_blank">Сообщить об ошибке</a></li>
-              <li><a href="https://github.com/bereznyak72/blockchat-releases/issues/new?template=feature_request.md" target="_blank">Запросить функцию</a></li>
+              <li><a href="https://github.com/bereznyak72/blockchat-releases/issues/new?template=bug_report.md" target="_blank" data-lang="report">Сообщить об ошибке</a></li>
+              <li><a href="https://github.com/bereznyak72/blockchat-releases/issues/new?template=feature_request.md" target="_blank" data-lang="request">Запросить функцию</a></li>
             </ul>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>© 2025 BlockChat. Все права защищены. | Разработано для приватного общения</p>
+          <p data-lang="rightsreserved">© 2025 BlockChat. Все права защищены. | Разработано для приватного общения</p>
         </div>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
