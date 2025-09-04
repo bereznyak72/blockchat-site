@@ -120,12 +120,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  min-height: 60vh; */
 }
 
 /* Навигация */
@@ -1852,4 +1846,71 @@ footer::before {
 
 .app-content::-webkit-scrollbar-track {
   background: var(--bg-light);
+}
+
+/* Стили для уведомления о временной недоступности скачивания */
+.download-notice {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
+  border: 2px solid var(--warning);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.1);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.download-notice .notice-icon {
+  font-size: 2rem;
+  min-width: 40px;
+  color: var(--warning);
+}
+
+.download-notice .notice-content h3 {
+  color: var(--warning);
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+}
+
+.download-notice .notice-content p {
+  margin-bottom: 12px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Стили для неактивных кнопок скачивания */
+.disabled-download-btn {
+  background: var(--bg-light) !important;
+  color: var(--text-lighter) !important;
+  cursor: not-allowed !important;
+  opacity: 0.7;
+  position: relative;
+  overflow: hidden;
+}
+
+.disabled-download-btn::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .download-notice {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .download-notice .notice-icon {
+    margin: 0 auto;
+  }
 }

@@ -250,8 +250,10 @@ const translations = {
     rightsreserved: "© 2025 BlockChat. All rights reserved. | Designed for private communication",
     enter: "Enter a message...",
     automatically: "Messages are sent directly between our devices via WebRTC! The signaling server starts automatically.",
-    interlocutor: "The interlocutor types"
-
+    interlocutor: "The interlocutor types",
+    temporaryUnavailableTitle: "Temporarily unavailable for download",
+    temporaryUnavailableText: "Due to the resolution of legal issues related to the legislation of the Russian Federation, downloading the program is temporarily suspended. We are actively working on bringing the project into compliance with legal requirements and continue to develop new features.",
+    developmentContinues: "BlockChat development continues! Follow updates on our site."
   },
   ru: {
     notificationmessage: "Сообщения идут напрямую через P2P соединение!",
@@ -342,7 +344,10 @@ const translations = {
     rightsreserved: "© 2025 BlockChat. Все права защищены. | Разработано для приватного общения",
     enter: "Введите сообщение...",
     automatically: "Сообщения идут напрямую между нашими устройствами через WebRTC! Сигнальный сервер запускается автоматически.",
-    interlocutor: "Собеседник печатает"
+    interlocutor: "Собеседник печатает",
+    emporaryUnavailableTitle: "Временно недоступно для скачивания",
+    temporaryUnavailableText: "В связи с решением юридических вопросов, связанных с законодательством РФ, скачивание программы временно приостановлено. Мы активно работаем над приведением проекта в соответствие с требованиями законодательства и продолжаем разработку новых функций.",
+    developmentContinues: "Разработка BlockChat продолжается! Следите за обновлениями на нашем сайте."
   }
 };
 
