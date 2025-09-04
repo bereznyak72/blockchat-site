@@ -120,6 +120,12 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60vh; */
 }
 
 /* Навигация */
@@ -442,6 +448,8 @@ input:checked + .slider .lang-text.en {
   text-align: center;
   padding: 100px 0 80px;
   position: relative;
+  justify-content: center;
+  min-height: 60vh;
 }
 
 .hero::before {
@@ -477,6 +485,7 @@ input:checked + .slider .lang-text.en {
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 24px;
+  max-width: 800px;
   background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -492,6 +501,7 @@ input:checked + .slider .lang-text.en {
 }
 
 .cta-buttons {
+  justify-content: center;
   display: flex;
   gap: 16px;
   margin-bottom: 60px;
