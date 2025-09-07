@@ -253,7 +253,12 @@ const translations = {
     interlocutor: "The interlocutor types",
     temporaryUnavailableTitle: "Temporarily unavailable for download",
     temporaryUnavailableText: "Due to the resolution of legal issues related to the legislation of the Russian Federation, downloading the program is temporarily suspended. We are actively working on bringing the project into compliance with legal requirements and continue to develop new features.",
-    developmentContinues: "BlockChat development continues! Follow updates on our site."
+    developmentContinues: "BlockChat development continues! Follow updates on our site.",
+    ReleaseFooter: 'Releases',
+    TitleDevelopers: 'The development team',
+    DescriptionDevelopers: 'The talented developers who created BlockChat',
+    MainDeveloper: 'Main Developer',
+    developer: 'Developer',
   },
   ru: {
     notificationmessage: "Сообщения идут напрямую через P2P соединение!",
@@ -347,7 +352,12 @@ const translations = {
     interlocutor: "Собеседник печатает",
     temporaryUnavailableTitle: "Временно недоступно для скачивания",
     temporaryUnavailableText: "В связи с решением юридических вопросов, связанных с законодательством РФ, скачивание программы временно приостановлено. Мы активно работаем над приведением проекта в соответствие с требованиями законодательства и продолжаем разработку новых функций.",
-    developmentContinues: "Разработка BlockChat продолжается! Следите за обновлениями на нашем сайте."
+    developmentContinues: "Разработка BlockChat продолжается! Следите за обновлениями на нашем сайте.",
+    ReleaseFooter: 'Релизы',
+    TitleDevelopers: 'Команда разработчиков',
+    DescriptionDevelopers: 'Талантливые разработчики, создавшие BlockChat',
+    MainDeveloper: 'Главный разработчик',
+    developer: 'Разработчик',
   }
 };
 
