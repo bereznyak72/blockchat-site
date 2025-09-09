@@ -1,5 +1,4 @@
 :root {
-  /* Оставляем светлую тему по умолчанию в :root */
   --primary: #0066ff;
   --primary-light: #0099ff;
   --primary-dark: #0044cc;
@@ -50,7 +49,6 @@
 }
 
 [data-theme="dark"] {
-  /* Тёмная тема применяется через атрибут */
   --primary: #0066ff;
   --primary-light: #0099ff;
   --primary-dark: #0044cc;
@@ -280,7 +278,7 @@ nav {
   z-index: 2;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   transform: translateX(38px);
 }
 
@@ -301,12 +299,12 @@ input:checked + .slider:before {
   opacity: 1;
 }
 
-input:checked + .slider .lang-text.ru {
+input:checked+.slider .lang-text.ru {
   color: var(--text);
   opacity: 1;
 }
 
-input:checked + .slider .lang-text.en {
+input:checked+.slider .lang-text.en {
   color: white;
   opacity: 1;
 }
@@ -316,7 +314,7 @@ input:checked + .slider .lang-text.en {
   transform: scale(1.1);
 }
 
-.switch:hover input:checked + .slider:before {
+.switch:hover input:checked+.slider:before {
   transform: translateX(38px) scale(1.1);
 }
 
@@ -1909,7 +1907,7 @@ footer::before {
     text-align: center;
     gap: 15px;
   }
-  
+
   .download-notice .notice-icon {
     margin: 0 auto;
   }
@@ -1975,21 +1973,21 @@ footer::before {
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  
+
   .developer-card {
     padding: 24px;
   }
-  
+
   .developer-avatar {
     width: 100px;
     height: 100px;
   }
-  
+
   .developer-links {
     flex-direction: column;
     gap: 12px;
   }
-  
+
   .developer-links .btn {
     width: 100%;
   }
