@@ -503,6 +503,11 @@ input:checked+.slider .lang-text.en {
   font-size: 0.9rem;
 }
 
+.blog-card-author a {
+  text-decoration: none;
+  color: var(--text-light);
+}
+
 .author-avatar {
   width: 24px;
   height: 24px;
