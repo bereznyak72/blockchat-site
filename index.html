@@ -14,13 +14,13 @@
       "@type": "SoftwareApplication",
       "name": "BlockChat",
       "applicationCategory": "CommunicationApplication",
-      "operatingSystem": "Windows, Linux",
+      "operatingSystem": "Windows, Linux, MacOS",
       "description": "Децентрализованный P2P мессенджер со сквозным шифрованием. Прямое и безопасное соединение между пользователями без центральных серверов.",
       "applicationSubCategory": "InstantMessagingApplication",
       "logo": "https://bereznyak72.github.io/blockchat-site/images/logo.png",
       "url": "https://bereznyak72.github.io/blockchat-site/",
       "downloadUrl": "https://github.com/bereznyak72/blockchat-releases/releases/",
-      "softwareVersion": "0.9.0",
+      "softwareVersion": "1.0.0",
     }
     </script>
     <link rel="stylesheet" href="css/index.css">
@@ -39,7 +39,7 @@
         </div>
         <div class="nav-links">
           <a href="blogs.html" class="nav-link" data-lang="BlogFooter">Блог</a>
-          <a href="#download" class="nav-link smooth" data-lang="download">Скачать</a>
+          <a href="download.html" class="nav-link" data-lang="download">Скачать</a>
           <div class="language-switch">
             <label class="switch">
               <input type="checkbox" id="langToggle">
@@ -70,7 +70,7 @@
         <h1 data-lang="privacy">Приватность в каждом сообщении</h1>
         <p data-lang="about">BlockChat — это мессенджер с прямой peer-to-peer связью между пользователями. Ваши сообщения передаются напрямую, без хранения на серверах.</p>
         <div class="cta-buttons">
-          <a href="#download" class="btn btn-primary" data-lang="download">
+          <a href="download.html" class="btn btn-primary" data-lang="download">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 16L12 4M12 16L8 12M12 16L16 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               <path d="M4 20H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -451,57 +451,13 @@
         </div>
       </div>
     </section>
-    <section id="download" class="features" style="background: var(--bg);">
-      <div class="container">
-        <div class="section-title fade-in">
-          <h2 data-lang="startusing">Начните использовать BlockChat сегодня</h2>
-          <p data-lang="joincommunity">Присоединяйтесь к сообществу пользователей, ценящих прямое общение без посредников</p>
-        </div>
-        <div class="download-notice fade-in">
-          <div class="notice-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="notice-content">
-            <h3 data-lang="temporaryUnavailableTitle">Временно недоступно для скачивания</h3>
-            <p data-lang="temporaryUnavailableText">В связи с решением юридических вопросов, связанных с законодательством РФ, скачивание программы временно приостановлено. Мы активно работаем над приведением проекта в соответствие с требованиями законодательства и продолжаем разработку новых функций.</p>
-            <p data-lang="developmentContinues"><strong>Разработка BlockChat продолжается!</strong> Следите за обновлениями на нашем сайте.</p>
-          </div>
-        </div>
-        <div style="text-align: center;" class="fade-in">
-          <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;">
-            <a class="btn btn-primary disabled-download-btn" data-lang="windows">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 16L12 4M12 16L8 12M12 16L16 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M4 20H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-              </svg>
-              Скачать для Windows
-            </a>
-            <a class="btn btn-primary disabled-download-btn" data-lang="linux">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 16L12 4M12 16L8 12M12 16L16 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M4 20H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-              </svg>
-              Скачать для Linux
-            </a>
-            <a class="btn btn-primary disabled-download-btn" data-lang="mac">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 16L12 4M12 16L8 12M12 16L16 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M4 20H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-              </svg>
-              Скачать для MacOS
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+
     <!-- Блок разработчиков -->
     <section id="developers" class="features" style="background: var(--bg-dark);">
       <div class="container">
         <div class="section-title fade-in">
           <h2 data-lang="TitleDevelopers">Команда разработчиков</h2>
-          <p data-lang="DescriptionDevelopers">Талантливые разработчики, создавшие BlockChat</p>
+          <p data-lang="DescriptionDevelopers">Разработчики, создавшие BlockChat</p>
         </div>
         <div class="developers-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 40px;">
           <!-- Разработчик 1 -->
@@ -606,10 +562,10 @@
           <div class="footer-column">
             <h3 data-lang="product">Продукт</h3>
             <ul class="footer-links">
+              <li><a href="download.html" data-lang="download">Скачать</a></li>
               <li><a href="#features" data-lang="features">Особенности</a></li>
               <li><a href="#how-it-works" data-lang="howitworks">Как подключиться</a></li>
               <li><a href="#backlog" data-lang="backlog">Бэклог</a></li>
-              <li><a href="#developers" data-lang="developers">Разработчики</a></li>
             </ul>
           </div>
           <div class="footer-column">
