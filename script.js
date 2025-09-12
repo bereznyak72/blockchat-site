@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Плавная прокрутка
 function initSmoothScrolling() {
-  document.querySelectorAll('.nav-link').forEach(link => {
+  document.querySelectorAll('.smooth').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const targetId = link.getAttribute('href');
