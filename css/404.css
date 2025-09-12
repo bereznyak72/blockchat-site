@@ -1,0 +1,382 @@
+.error-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    position: relative;
+}
+
+.error-content {
+    text-align: center;
+    max-width: 600px;
+    padding: 40px;
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+    position: relative;
+    z-index: 2;
+}
+
+.error-graphic {
+    margin: 30px 0;
+    position: relative;
+}
+
+.error-number {
+    font-size: 8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.error-number::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
+}
+
+.error-icon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    background: var(--bg-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--error);
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.error-icon::before {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border: 2px solid var(--error);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: pulse 2s infinite 0.5s;
+}
+
+.error-icon svg {
+    width: 60px;
+    height: 60px;
+}
+
+.error-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text);
+}
+
+.error-message {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.error-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.error-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.error-background::before {
+    content: '404';
+    position: absolute;
+    font-size: 30vw;
+    font-weight: 900;
+    color: var(--primary);
+    opacity: 0.05;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+.floating-element {
+    position: absolute;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.floating-1 {
+    top: 20%;
+    left: 10%;
+    animation: float 8s infinite ease-in-out;
+}
+
+.floating-2 {
+    top: 60%;
+    right: 15%;
+    animation: float 10s infinite ease-in-out reverse;
+}
+
+.floating-3 {
+    bottom: 20%;
+    left: 20%;
+    animation: float 12s infinite ease-in-out 1s;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    width: 90%;
+    max-width: 500px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+    }
+
+    to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    }
+}
+
+/* Модалное окно*/
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-header h3 {
+    color: var(--text);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    background: var(--bg-light);
+    color: var(--error);
+}
+
+.modal-body {
+    padding: 32px;
+    text-align: center;
+}
+
+.modal-icon {
+    margin-bottom: 20px;
+}
+
+.modal-body p {
+    color: var(--text-light);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding: 24px;
+    border-top: 1px solid var(--border);
+}
+
+/* Улучшенная адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .error-number {
+        font-size: 5rem;
+        margin-top: 10%;
+    }
+    
+    .error-title {
+        font-size: 1.5rem;
+    }
+    
+    .error-message {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .error-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .error-actions .btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+    
+    .error-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .error-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .error-content {
+        padding: 25px 20px;
+        margin: 0 15px;
+    }
+    
+    .floating-element {
+        display: none; /* Скрываем плавающие элементы на мобильных */
+    }
+    
+    .error-background::before {
+        font-size: 40vw; /* Увеличиваем фон для мобильных */
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+
+    .modal-footer {
+        flex-direction: column;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .modal-header {
+        padding: 20px;
+    }
+}
+
+/* Дополнительные улучшения для очень маленьких экранов */
+@media (max-width: 480px) {
+    .error-number {
+        font-size: 4rem;
+    }
+    
+    .error-title {
+        font-size: 1.3rem;
+    }
+    
+    .error-message {
+        font-size: 0.9rem;
+    }
+    
+    .error-actions .btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .error-content {
+        padding: 20px 15px;
+    }
+}
+
+/* Улучшения для навигации на мобильных */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 12px;
+    }
+    
+    .logo span {
+        font-size: 1.1rem;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}

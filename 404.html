@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="errorTitle">Страница не найдена (404) - BlockChat</title>
+    <link rel="shortcut icon" href="images/logo-white.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/404.css">
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="images/logo-white.png" width="30px"/>
+                </div>
+                <span data-lang="logoText">BlockChat</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link" data-lang="home">Главная</a>
+                <a href="blogs.html" class="nav-link" data-lang="BlogFooter">Блог</a>
+                <a href="index.html#download" class="nav-link" data-lang="download">Скачать</a>
+                <div class="language-switch">
+                    <label class="switch">
+                        <input type="checkbox" id="langToggle">
+                        <span class="slider">
+                            <span class="lang-text ru">RU</span>
+                            <span class="lang-text en">EN</span>
+                        </span>
+                    </label>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 2V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 20V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M4.93 4.93L6.34 6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M17.66 17.66L19.07 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 12H4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M20 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.34 17.66L4.93 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M19.07 4.93L17.66 6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <section class="error-container">
+        <div class="error-background"></div>
+        
+        <!-- Плавающие элементы -->
+        <div class="floating-element floating-1">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--primary)" stroke-width="2"/>
+            </svg>
+        </div>
+        <div class="floating-element floating-2">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="var(--secondary)" stroke-width="2"/>
+                <path d="M8 12H16M12 8V16" stroke="var(--secondary)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="floating-element floating-3">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <div class="error-content">
+            <div class="error-graphic">
+                <div class="error-icon">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke="var(--error)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="error-number">404</div>
+            </div>
+
+            <h1 class="error-title" data-lang="errorTitleText">Потерялись в сети?</h1>
+            <p class="error-message" data-lang="errorMessage">
+                Кажется, эта страница отключилась от нашего P2P-соединения. 
+                Возможно, она была перемещена или больше не существует.
+            </p>
+
+            <div class="error-actions">
+                <button onclick="history.back()" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span data-lang="goBack">Вернуться назад</span>
+                </button>
+                 <a href="index.html" class="btn btn-primary" style="align-items: center;">
+                    <span data-lang="goHome">На главную</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 data-lang="temporarilyunavailable">Временно недоступно</h3>
+          <button class="modal-close" onclick="closeModal()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p data-lang="featuredevelopment">Данная функция находится в разработке. Мы работаем над улучшением сайта и скоро добавим эту возможность.</p>
+        </div>
+        <div class="modal-footer">
+          <button data-lang="okay" class="btn btn-primary" onclick="closeModal()">Понятно</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 data-lang="product">Продукт</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#features" data-lang="features">Особенности</a></li>
+                        <li><a href="index.html#how-it-works" data-lang="howitworks">Как подключиться</a></li>
+                        <li><a href="index.html#backlog" data-lang="backlog">Бэклог</a></li>
+                        <li><a href="index.html#download" data-lang="download">Скачать</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-lang="support">Поддержка</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/bereznyak72/blockchat-releases/issues/new?template=bug_report.md" target="_blank" class="disabled-link-modal" data-lang="report">Сообщить об ошибке</a></li>
+                        <li><a href="https://github.com/bereznyak72/blockchat-releases/issues/new?template=feature_request.md" target="_blank" class="disabled-link-modal" data-lang="request">Запросить функцию</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-lang="community">Сообщество</h3>
+                    <ul class="footer-links">
+                        <li><a href="blogs.html" data-lang="BlogFooter">Блог</a></li>
+                        <li><a href="#features" class="disabled-link-modal" data-lang="ReleaseFooter">Релизы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-lang="LegalInf">Правовая информация</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html" data-lang="LegalPol">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang="rightsreserved">© 2025 BlockChat. Все права защищены. | Разработано для приватного общения</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Переводы для страницы 404
+        const translations = {
+            en: {
+                errorTitle: "Page Not Found (404) - BlockChat",
+                errorTitleText: "Lost in the network?",
+                errorMessage: "It seems this page has disconnected from our P2P connection. It may have been moved or no longer exists.",
+                goBack: "Go Back",
+                goHome: "Go to Home",
+                home: "Home",
+                download: "Download",
+                product: "Product",
+                features: "Features",
+                howitworks: "How to connect",
+                backlog: "Backlog",
+                support: "Support",
+                report: "Report a bug",
+                request: "Request a feature",
+                community: "Community",
+                BlogFooter: "Blog",
+                ReleaseFooter: "Releases",
+                LegalInf: "Legal information",
+                LegalPol: "Privacy policy",
+                rightsreserved: "© 2025 BlockChat. All rights reserved. | Designed for private communication",
+                temporarilyunavailable: "Temporarily unavailable",
+                featuredevelopment: "This feature is currently under development. We are working on improving the website and will soon add this feature.",
+                okay: "Okay",
+                logoText: "BlockChat"
+            },
+            ru: {
+                errorTitle: "Страница не найдена (404) - BlockChat",
+                errorTitleText: "Потерялись в сети?",
+                errorMessage: "Кажется, эта страница отключилась от нашего P2P-соединения. Возможно, она была перемещена или больше не существует.",
+                goBack: "Вернуться назад",
+                goHome: "На главную",
+                home: "Главная",
+                download: "Скачать",
+                product: "Продукт",
+                features: "Особенности",
+                howitworks: "Как подключиться",
+                backlog: "Бэклог",
+                support: "Поддержка",
+                report: "Сообщить об ошибке",
+                request: "Запросить функцию",
+                community: "Сообщество",
+                BlogFooter: "Блог",
+                ReleaseFooter: "Релизы",
+                LegalInf: "Правовая информация",
+                LegalPol: "Политика конфиденциальности",
+                rightsreserved: "© 2025 BlockChat. Все права защищены. | Разработано для приватного общения",
+                temporarilyunavailable: "Временно недоступно",
+                featuredevelopment: "Данная функция находится в разработке. Мы работаем над улучшением сайта и скоро добавим эту возможность.",
+                okay: "Понятно",
+                logoText: "BlockChat"
+            }
+        };
+
+        // Функция смены языка
+        function changeLanguage(lang) {
+            localStorage.setItem('lang', lang);
+            
+            document.title = getTranslation('errorTitle');
+            
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        // Получение перевода по ключу
+        function getTranslation(key) {
+            const currentLang = localStorage.getItem('lang') || 'ru';
+            return translations[currentLang][key] || key;
+        }
+
+        // Инициализация темы
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                });
+            }
+        }
+        
+        // Инициализация переключателя языка
+        function initLanguageToggle() {
+            const langToggle = document.getElementById('langToggle');
+            if (!langToggle) return;
+            
+            const savedLang = localStorage.getItem('lang') || 'ru';
+            langToggle.checked = savedLang === 'en';
+            
+            langToggle.addEventListener('change', function() {
+                const newLang = this.checked ? 'en' : 'ru';
+                changeLanguage(newLang);
+            });
+        }
+        
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+            initLanguageToggle();
+            initProgressBar();
+            
+            const savedLang = localStorage.getItem('lang') || 'ru';
+            changeLanguage(savedLang);
+        });
+
+        function initProgressBar() {
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                const progressBar = document.getElementById('progressBar');
+                if (progressBar) {
+                    progressBar.style.width = scrolled + '%';
+                }
+            });
+        }
+
+        // Запуск модального окна
+        function showModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Закрытие модального окна
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Обработка кликов по ссылкам с классом disabled-link-modal
+        document.querySelectorAll('.disabled-link-modal').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                showModal();
+            });
+        });
+
+        // Закрытие модального окна при клике вне его
+        document.getElementById('modal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Закрытие модального окна по ESC
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
