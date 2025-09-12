@@ -142,6 +142,11 @@ nav {
   color: var(--text);
 }
 
+.logo a {
+    text-decoration: none;
+    color: var(--text);
+}
+
 .logo-icon {
   width: 32px;
   height: 32px;
