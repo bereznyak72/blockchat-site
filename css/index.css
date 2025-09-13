@@ -368,16 +368,6 @@ input:checked+.slider .lang-text.en {
   font-size: 1.2rem;
 }
 
-.badge-new {
-  background: var(--accent-dark);
-  color: rgb(255, 255, 255);
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  margin-left: 8px;
-  font-weight: 600;
-}
-
 /* Сетка особенностей */
 .features-grid {
   display: grid;
