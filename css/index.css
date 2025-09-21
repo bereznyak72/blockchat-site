@@ -103,15 +103,22 @@
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
-  background-image:
-    radial-gradient(circle at 15% 50%, rgba(0, 102, 255, 0.05) 0%, transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(255, 51, 102, 0.05) 0%, transparent 25%);
+  background-image: radial-gradient(
+      circle at 15% 50%,
+      rgba(0, 102, 255, 0.05) 0%,
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(255, 51, 102, 0.05) 0%,
+      transparent 25%
+    );
 }
 
 .container {
@@ -120,6 +127,11 @@ body {
   padding: 0 20px;
 }
 
+.container-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /* Навигация */
 nav {
   display: flex;
@@ -144,8 +156,8 @@ nav {
 }
 
 .logo a {
-    text-decoration: none;
-    color: var(--text);
+  text-decoration: none;
+  color: var(--text);
 }
 
 .logo-icon {
@@ -161,11 +173,16 @@ nav {
 }
 
 .logo-icon::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 150%;
   height: 150%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   animation: shine 3s infinite linear;
 }
 
@@ -199,7 +216,7 @@ nav {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -283,7 +300,7 @@ nav {
   z-index: 2;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   transform: translateX(38px);
 }
 
@@ -304,12 +321,12 @@ input:checked+.slider:before {
   opacity: 1;
 }
 
-input:checked+.slider .lang-text.ru {
+input:checked + .slider .lang-text.ru {
   color: var(--text);
   opacity: 1;
 }
 
-input:checked+.slider .lang-text.en {
+input:checked + .slider .lang-text.en {
   color: white;
   opacity: 1;
 }
@@ -319,12 +336,16 @@ input:checked+.slider .lang-text.en {
   transform: scale(1.1);
 }
 
-.switch:hover input:checked+.slider:before {
+.switch:hover input:checked + .slider:before {
   transform: translateX(38px) scale(1.1);
 }
 
 .important-notice {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(245, 158, 11, 0.1),
+    rgba(245, 158, 11, 0.05)
+  );
   border: 2px solid var(--secondary);
   border-radius: var(--radius-lg);
   padding: 24px;
@@ -360,7 +381,7 @@ input:checked+.slider .lang-text.en {
 }
 
 .notice-content li::before {
-  content: '•';
+  content: "•";
   position: absolute;
   left: 0;
   color: var(--warning);
@@ -402,7 +423,7 @@ input:checked+.slider .lang-text.en {
 }
 
 .network-tips li::before {
-  content: '→';
+  content: "→";
   position: absolute;
   left: 0;
   color: var(--primary);
@@ -440,15 +461,22 @@ input:checked+.slider .lang-text.en {
 }
 
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(0, 102, 255, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(255, 51, 102, 0.15) 0%, transparent 40%);
+  background: radial-gradient(
+      circle at 20% 30%,
+      rgba(0, 102, 255, 0.15) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(255, 51, 102, 0.15) 0%,
+      transparent 40%
+    );
   animation: gradientMove 15s ease infinite;
   z-index: -1;
   pointer-events: none;
@@ -473,7 +501,12 @@ input:checked+.slider .lang-text.en {
   font-weight: 800;
   margin-bottom: 24px;
   max-width: 800px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary),
+    var(--accent)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -485,6 +518,7 @@ input:checked+.slider .lang-text.en {
   color: var(--text-light);
   max-width: 700px;
   margin-bottom: 40px;
+  padding: 10px;
 }
 
 .cta-buttons {
@@ -510,13 +544,18 @@ input:checked+.slider .lang-text.en {
 }
 
 .btn::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: -100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: 0.5s;
 }
 
@@ -634,7 +673,7 @@ input:checked+.slider .lang-text.en {
 }
 
 .my-message::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 4px;
   right: -8px;
@@ -657,7 +696,7 @@ input:checked+.slider .lang-text.en {
 }
 
 .other-message::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 4px;
   left: -8px;
@@ -795,7 +834,6 @@ input:checked+.slider .lang-text.en {
 }
 
 @keyframes typingAnimation {
-
   0%,
   60%,
   100% {
@@ -929,7 +967,7 @@ input:checked+.slider .lang-text.en {
 }
 
 .feature-icon::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1000,7 +1038,7 @@ input:checked+.slider .lang-text.en {
 }
 
 .step-number::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1029,15 +1067,22 @@ input:checked+.slider .lang-text.en {
 }
 
 .backlog::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background:
-    radial-gradient(circle at 20% 10%, rgba(79, 70, 229, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 90%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+  background: radial-gradient(
+      circle at 20% 10%,
+      rgba(79, 70, 229, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 90%,
+      rgba(16, 185, 129, 0.05) 0%,
+      transparent 50%
+    );
   pointer-events: none;
 }
 
@@ -1049,7 +1094,12 @@ input:checked+.slider .lang-text.en {
 }
 
 .timeline-line {
-  background: linear-gradient(to bottom, var(--primary), var(--secondary), var(--accent));
+  background: linear-gradient(
+    to bottom,
+    var(--primary),
+    var(--secondary),
+    var(--accent)
+  );
   box-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
 }
 
@@ -1130,7 +1180,7 @@ input:checked+.slider .lang-text.en {
 }
 
 .timeline-marker::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1171,7 +1221,7 @@ input:checked+.slider .lang-text.en {
 }
 
 .backlog-content::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 20px;
   width: 20px;
@@ -1304,7 +1354,6 @@ input:checked+.slider .lang-text.en {
 
 /* Анимации */
 @keyframes pulseMarker {
-
   0%,
   100% {
     transform: scale(1);
@@ -1382,13 +1431,18 @@ footer {
 }
 
 footer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary),
+    var(--accent)
+  );
   opacity: 0.3;
 }
 
@@ -1547,7 +1601,6 @@ footer::before {
 }
 
 @keyframes pulseRelease {
-
   0%,
   100% {
     transform: scale(1);
@@ -1570,7 +1623,11 @@ footer::before {
 }
 
 .status-release {
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(255, 142, 83, 0.15)) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.2),
+    rgba(255, 142, 83, 0.15)
+  ) !important;
   color: #ff6b35 !important;
   border: 2px solid rgba(255, 107, 53, 0.3) !important;
   font-weight: 700;
@@ -1592,7 +1649,7 @@ footer::before {
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 600;
-  font-family: 'Monaco', 'Consolas', monospace;
+  font-family: "Monaco", "Consolas", monospace;
 }
 
 /* Эффекты при наведении для релиза */
@@ -1605,7 +1662,6 @@ footer::before {
 }
 
 @keyframes pulseReleaseHover {
-
   0%,
   100% {
     transform: scale(1.1);
@@ -1843,7 +1899,11 @@ footer::before {
 
 /* Стили для уведомления о временной недоступности скачивания */
 .download-notice {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(245, 158, 11, 0.1),
+    rgba(245, 158, 11, 0.05)
+  );
   border: 2px solid var(--warning);
   border-radius: var(--radius-lg);
   padding: 24px;
