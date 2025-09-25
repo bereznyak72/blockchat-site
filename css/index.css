@@ -1801,6 +1801,10 @@ footer::before {
     transform: translateY(-2px);
   }
 
+  .cta-buttons {
+    width: 90%;
+  }
+
   #chat-notification {
     bottom: 10px;
     left: 5%;
