@@ -534,7 +534,8 @@ input:checked + .slider .lang-text.en {
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   align-items: center;
   gap: 8px;
   position: relative;
