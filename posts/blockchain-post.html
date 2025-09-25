@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блокчейн: основы технологии и её применение в P2P коммуникациях - Блог BlockChat</title>
+    <link rel="shortcut icon" href="../images/icon.png">
+    <meta name="description" content="Узнайте, как технология блокчейн работает, почему она безопасна и как применяется в децентрализованных P2P мессенджерах для повышения приватности.">
+    <meta name="keywords" content="блокчейн, blockchain, P2P, децентрализация, безопасность, BlockChat, криптография">
+    <link rel="stylesheet" href="../css/posts.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="../images/logo-white.png" width="30px"/>
+                </div>
+                <a href="../index.html">BlockChat</a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Главная</a>
+                <a href="../blogs.html" class="nav-link">Блог</a>
+                <a href="../download.html" class="nav-link">Скачать</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 2V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 20V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M4.93 4.93L6.34 6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M17.66 17.66L19.07 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 12H4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M20 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.34 17.66L4.93 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M19.07 4.93L17.66 6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <article class="article">
+        <div class="container">
+            <header class="article-hero">
+                <h1>Блокчейн: основы технологии и её применение в P2P коммуникациях</h1>
+                <div class="article-meta">
+                    <div class="article-meta-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>25 сентября 2025</span>
+                    </div>
+                    <div class="article-meta-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <a href="https://nizi52.github.io/" target="_blank">nizi52</a>
+                    </div>
+                    <div class="article-meta-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>12 мин чтения</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <figure class="article-image">
+                    <img src="../images/blockchain-post.png" alt="Блокчейн технология - децентрализованная сеть">
+                    <figcaption>Блокчейн как основа для безопасных децентрализованных приложений</figcaption>
+                </figure>
+
+                <p>Технология блокчейн, изначально созданная для криптовалют, сегодня находит применение в самых разных сферах — от финансов до систем голосования и, что особенно важно для нас, в области безопасных коммуникаций. В этой статье мы разберем, как работает блокчейн и почему он идеально подходит для создания приватных P2P мессенджеров.</p>
+
+                <h2>Что такое блокчейн?</h2>
+
+                <p>Блокчейн (blockchain) — это децентрализованная цифровая книга записей, которая хранит информацию в виде последовательности блоков, связанных между собой криптографическими методами. Каждый блок содержит набор транзакций (или других данных), временную метку и ссылку на предыдущий блок.</p>
+
+                <div class="info-box">
+                    <h4>Простая аналогия</h4>
+                    <p>Представьте себе цифровую учетную книгу, которую ведут одновременно тысячи людей. Каждая новая запись проверяется всеми участниками, а после добавления её уже нельзя изменить. Это и есть блокчейн.</p>
+                </div>
+
+                <h2>Ключевые принципы блокчейна</h2>
+
+                <h3>1. Децентрализация</h3>
+                <p>В отличие от традиционных баз данных, которые хранятся на центральных серверах, блокчейн распределен между всеми участниками сети. Нет единого контролирующего органа, что делает систему устойчивой к цензуре и атакам.</p>
+
+                <h3>2. Неизменяемость</h3>
+                <p>После того как данные записаны в блокчейн, их практически невозможно изменить. Каждый блок содержит хеш предыдущего блока, создавая цепочку. Изменение одного блока потребует изменения всех последующих блоков, что вычислительно невозможно.</p>
+
+                <h3>3. Прозрачность</h3>
+                <p>Все транзакции в блокчейне видны всем участникам сети (хотя содержание может быть зашифровано). Это создает доверие между участниками без необходимости в посредниках.</p>
+
+                <h3>4. Консенсус</h3>
+                <p>Для добавления новых блоков участники сети должны прийти к согласию (консенсусу) с помощью специальных алгоритмов, таких как Proof of Work или Proof of Stake.</p>
+
+                <h2>Как блокчейн обеспечивает безопасность?</h2>
+
+                <p>Безопасность блокчейна основана на нескольких криптографических принципах:</p>
+
+                <ol>
+                    <li><strong>Хеширование</strong> — каждый блок содержит уникальный хеш, который действует как цифровой отпечаток</li>
+                    <li><strong>Цифровые подписи</strong> — подтверждают подлинность транзакций</li>
+                    <li><strong>Многофакторная аутентификация</strong> — для доступа к данным требуются приватные ключи</li>
+                    <li><strong>Распределенный консенсус</strong> — атака на сеть требует контроля над большинством участников</li>
+                </ol>
+
+                <h2>Блокчейн в P2P коммуникациях: практическое применение</h2>
+
+                <p>В контексте мессенджеров и коммуникационных систем блокчейн может использоваться для:</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Задача</th>
+                            <th>Традиционный подход</th>
+                            <th>Блокчейн-решение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Аутентификация пользователей</td>
+                            <td>Централизованные серверы аутентификации</td>
+                            <td>Децентрализованные цифровые идентификаторы (DID)</td>
+                        </tr>
+                        <tr>
+                            <td>Хранение ключей шифрования</td>
+                            <td>Серверы провайдера</td>
+                            <td>Распределенное хранение в блокчейне</td>
+                        </tr>
+                        <tr>
+                            <td>Управление контактами</td>
+                            <td>Централизованные серверы контактов</td>
+                            <td>Децентрализованные реестры контактов</td>
+                        </tr>
+                        <tr>
+                            <td>Подтверждение доставки сообщений</td>
+                            <td>Серверные подтверждения</td>
+                            <td>Смарт-контракты для подтверждения доставки</td>
+                        </tr>
+                        <tr>
+                            <td>Защита от спама</td>
+                            <td>Централизованные фильтры</td>
+                            <td>Репутационные системы на блокчейне</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>BlockChat и блокчейн: наше видение</h2>
+
+                <p>В BlockChat мы исследуем возможности интеграции блокчейн-технологий для повышения безопасности и приватности наших пользователей. Вот некоторые из направлений, над которыми мы работаем:</p>
+
+                <h3>Децентрализованная аутентификация</h3>
+                <p>Использование блокчейна для создания самоуправляемых цифровых идентификаторов, которые не зависят от центральных провайдеров и дают пользователям полный контроль над своими данными.</p>
+
+                <h3>Распределенное хранение метаданных</h3>
+                <p>Вместо хранения метаданных о соединениях на наших серверах, мы исследуем возможность их распределенного хранения в зашифрованном виде.</p>
+
+                <h3>Смарт-контракты для управления группами</h3>
+                <p>Использование смарт-контрактов для децентрализованного управления групповыми чатами, где правила определяются участниками, а не центральным сервером.</p>
+
+                <div class="info-box">
+                    <h4>Важно понимать</h4>
+                    <p>Блокчейн не используется для хранения самих сообщений в BlockChat — они передаются напрямую между пользователями через P2P соединения. Блокчейн применяется только для вспомогательных функций, таких как аутентификация и управление контактами.</p>
+                </div>
+
+                <h2>Преимущества блокчейна для мессенджеров</h2>
+
+                <h3>1. Полный контроль над данными</h3>
+                <p>Пользователи получают полный контроль над своими цифровыми идентификаторами и данными, без зависимости от конкретного провайдера.</p>
+
+                <h3>2. Устойчивость к цензуре</h3>
+                <p>Децентрализованная природа блокчейна делает практически невозможной цензуру со стороны правительств или корпораций.</p>
+
+                <h3>3. Повышенная безопасность</h3>
+                <p>Криптографические основы блокчейна обеспечивают высокий уровень защиты от взлома и несанкционированного доступа.</p>
+
+                <h3>4. Прозрачность и доверие</h3>
+                <p>Пользователи могут самостоятельно проверять правила работы системы, не полагаясь на заверения разработчиков.</p>
+
+                <h2>Вызовы и ограничения</h2>
+
+                <p>Несмотря на преимущества, интеграция блокчейна в мессенджеры имеет свои challenges:</p>
+
+                <ul>
+                    <li><strong>Масштабируемость</strong> — блокчейн-сети могут быть медленными при большой нагрузке</li>
+                    <li><strong>Сложность использования</strong> — управление приватными ключами может быть сложным для обычных пользователей</li>
+                    <li><strong>Энергопотребление</strong> — некоторые алгоритмы консенсуса требуют значительных вычислительных ресурсов</li>
+                    <li><strong>Нормативные вопросы</strong> — законодательство в области блокчейна еще формируется</li>
+                </ul>
+
+                <h2>Будущее блокчейна в коммуникациях</h2>
+
+                <p>Мы считаем, что за блокчейном — будущее децентрализованных коммуникаций. Вот какие тенденции мы ожидаем в ближайшие годы:</p>
+
+                <ol>
+                    <li><strong>Гибридные решения</strong> — комбинация P2P и блокчейн-технологий для оптимального баланса скорости и безопасности</li>
+                    <li><strong>Улучшенная UX/UI</strong> — разработка более удобных интерфейсов для управления блокчейн-идентификаторами</li>
+                    <li><strong>Межсетевое взаимодействие</strong> — возможность обмена сообщениями между разными блокчейн-мессенджерами</li>
+                    <li><strong>Интеграция с DeFi и dApps</strong> — совмещение коммуникаций с децентрализованными финансовыми сервисами</li>
+                </ol>
+
+                <h2>Заключение</h2>
+
+                <p>Блокчейн — это не просто технология для криптовалют, а фундаментальный прорыв в способах организации доверительных взаимодействий между людьми. В сочетании с P2P технологиями он открывает путь к созданию по-настоящему децентрализованных, безопасных и приватных коммуникационных платформ.</p>
+
+                <p>В BlockChat мы продолжаем исследовать и внедрять передовые технологии для защиты приватности наших пользователей. Блокчейн — важная часть этой миссии, и мы уверены, что в будущем он станет стандартом для безопасных цифровых коммуникаций.</p>
+
+                <div class="article-navigation">
+                    <a href="../blogs.html" class="nav-button">
+                        К списку статей
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Временно недоступно</h3>
+          <button class="modal-close" id="modalClose">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p>Данная функция находится в разработке. Мы работаем над улучшением сайта и скоро добавим эту возможность.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" id="modalOk">Понятно</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Продукт</h3>
+            <ul class="footer-links">
+              <li><a href="../download.html">Скачать</a></li>
+              <li><a href="../index.html#features">Особенности</a></li>
+              <li><a href="../index.html#how-it-works">Как подключиться</a></li>
+              <li><a href="../index.html#backlog">Бэклог</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Поддержка</h3>
+            <ul class="footer-links">
+              <li><a href="#" class="modal-link">Сообщить об ошибке</a></li>
+              <li><a href="#" class="modal-link">Запросить функцию</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Сообщество</h3>
+            <ul class="footer-links">
+              <li><a href="../blogs.html">Блог</a></li>
+              <li><a href="#" class="modal-link">Релизы</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+              <h3>Правовая информация</h3>
+              <ul class="footer-links">
+                  <li><a href="../privacy.html">Политика конфиденциальности</a></li>
+              </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 BlockChat. Все права защищены. | Разработано для приватного общения</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+        // Переключение темы
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+        
+        // Проверка сохраненной темы
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            html.setAttribute('data-theme', savedTheme);
+        }
+        
+        // Модальное окно - получение элементов
+        const modal = document.getElementById('modal');
+        const modalClose = document.getElementById('modalClose');
+        const modalOk = document.getElementById('modalOk');
+        const modalLinks = document.querySelectorAll('.modal-link');
+        
+        // Функция открытия модального окна
+        function showModal() {
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Функция закрытия модального окна
+        function closeModal() {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Обработчики событий для модального окна
+        modalClose.addEventListener('click', closeModal);
+        modalOk.addEventListener('click', closeModal);
+        
+        // Обработчики для ссылок, открывающих модальное окно
+        modalLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                showModal();
+            });
+        });
+        
+        // Закрытие модального окна при клике вне его
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Закрытие модального окна по ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
