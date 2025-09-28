@@ -863,8 +863,8 @@
       }
 
       // Обработка кликов по ссылкам с классом disabled-link-modal
-      document.querySelectorAll(".disabled-link-modal").forEach((link) => {
-        link.addEventListener("click", function (e) {
+      document.querySelectorAll(".disabled-link-modal, .disabled-download-btn").forEach((element) => {
+        element.addEventListener("click", function (e) {
           e.preventDefault();
           showModal();
         });
