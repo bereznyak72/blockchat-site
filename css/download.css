@@ -493,57 +493,154 @@ input:checked + .slider .lang-text.en {
   background: var(--bg-light) !important;
   color: var(--text-lighter) !important;
   cursor: not-allowed !important;
-  opacity: 0.7;
   position: relative;
   overflow: hidden;
 }
 
+.disabled-download-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.disabled-download-btn:hover::before {
+  left: 100%;
+}
+
 /* Стили для кнопок платформ */
 .platform-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
   margin-bottom: 60px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .platform-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px;
+  padding: 32px 24px;
   background: var(--bg-card);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   transition: var(--transition);
-  min-width: 250px;
   text-align: center;
   box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.platform-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--primary-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.platform-btn:hover::before {
+  transform: scaleX(1);
 }
 
 .platform-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--primary);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
 }
 
 .platform-icon {
-  font-size: 2.5rem;
-  margin-bottom: 16px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background: var(--bg-light);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.platform-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-gradient);
+  opacity: 0.1;
+  transition: var(--transition);
+}
+
+.platform-btn:hover .platform-icon {
+  transform: scale(1.1);
+  background: var(--primary-ultralight);
+}
+
+.platform-btn:hover .platform-icon::before {
+  opacity: 0.2;
+}
+
+.platform-icon svg {
+  width: 40px;
+  height: 40px;
   color: var(--primary);
+  transition: var(--transition);
+}
+
+.platform-btn:hover .platform-icon svg {
+  color: var(--primary-dark);
+  transform: scale(1.1);
 }
 
 .platform-name {
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 8px;
   color: var(--text);
+  font-size: 1.2rem;
+  transition: var(--transition);
 }
 
 .platform-version {
   font-size: 0.9rem;
   color: var(--text-light);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  padding: 4px 12px;
+  background: var(--bg-light);
+  border-radius: 20px;
+  font-weight: 500;
 }
+
+.platform-btn .btn {
+  width: 100%;
+  justify-content: center;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: var(--radius);
+  position: relative;
+  z-index: 1;
+}
+
 
 /* Стили для истории версий */
 .version-history {
@@ -907,13 +1004,24 @@ footer::before {
   }
 
   .platform-buttons {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 16px;
   }
-
+  
   .platform-btn {
-    width: 100%;
-    max-width: 300px;
+    padding: 24px 20px;
+  }
+  
+  .platform-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 16px;
+  }
+  
+  .platform-icon svg {
+    width: 35px;
+    height: 35px;
   }
 
   .version-timeline {
@@ -949,5 +1057,19 @@ footer::before {
 
   .modal-body {
     padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .platform-buttons {
+    gap: 16px;
+  }
+  
+  .platform-btn {
+    padding: 20px 16px;
+  }
+  
+  .platform-name {
+    font-size: 1.1rem;
   }
 }
