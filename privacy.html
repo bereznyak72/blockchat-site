@@ -58,11 +58,26 @@
         <div class="container">
             <div class="privacy-section">
                 <h2 data-lang="privacyPrinciples">Принципы конфиденциальности BlockChat</h2>
-                <p data-lang="privacyPrinciplesText">BlockChat — это децентрализованный P2P мессенджер, созданный с принципом полной приватности пользователей. В отличие от традиционных мессенджеров, мы не храним и не имеем доступа к вашим личным данным и сообщениям.</p>
+                <p data-lang="privacyPrinciplesText">BlockChat — это децентрализованный P2P мессенджер с системой BlockChat ID, созданный с принципом полной приватности пользователей. В отличие от традиционных мессенджеров, мы обеспечиваем безопасное общение через уникальные идентификаторы без хранения личных данных.</p>
                 
                 <div class="privacy-highlight">
-                    <p data-lang="privacyHighlight1">BlockChat не хранит ваши сообщения на серверах. Все сообщения передаются напрямую между устройствами пользователей через зашифрованные P2P соединения.</p>
+                    <p data-lang="privacyHighlight1">BlockChat использует систему BlockChat ID для идентификации пользователей. Ваши сообщения передаются напрямую между устройствами через зашифрованные P2P соединения после установки связи через сервер BlockChat ID.</p>
                 </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 data-lang="dataWeCollect">Какие данные мы собираем для работы BlockChat ID</h2>
+                <p data-lang="dataWeCollectText">Для обеспечения работы системы BlockChat ID мы временно храним:</p>
+                
+                <ul>
+                    <li data-lang="collect1">BlockChat ID (уникальный идентификатор пользователя)</li>
+                    <li data-lang="collect2">Никнейм пользователя (отображаемое имя)</li>
+                    <li data-lang="collect3">Публичный ключ шифрования</li>
+                    <li data-lang="collect4">IP-адрес (только для установки P2P соединения)</li>
+                    <li data-lang="collect5">Информацию о созданных чатах и их участниках</li>
+                </ul>
+                
+                <p data-lang="dataWeCollectText2">Эти данные необходимы для функционирования системы идентификации и подключения пользователей. Они хранятся только во время активности пользователя в системе.</p>
             </div>
 
             <div class="privacy-section">
@@ -70,18 +85,18 @@
                 <p data-lang="dataWeDontCollectText">В отличие от большинства мессенджеров, BlockChat сознательно не собирает:</p>
                 
                 <ul>
-                    <li data-lang="dontCollect1">Персональные данные пользователей (имя, email, номер телефона)</li>
+                    <li data-lang="dontCollect1">Персональные данные (имя, email, номер телефона)</li>
                     <li data-lang="dontCollect2">Контакты из вашей адресной книги</li>
-                    <li data-lang="dontCollect3">Историю сообщений и переписки</li>
-                    <li data-lang="dontCollect4">Метаданные сообщений (время отправки, получатели)</li>
+                    <li data-lang="dontCollect3">Содержание сообщений и переписки</li>
+                    <li data-lang="dontCollect4">Метаданные сообщений (время отправки, содержимое)</li>
                     <li data-lang="dontCollect5">Геолокационные данные</li>
                     <li data-lang="dontCollect6">Информацию об устройствах в сети</li>
-                    <li data-lang="dontCollect7">IP-адреса пользователей (кроме временной обработки для установления P2P соединения)</li>
-                    <li data-lang="dontCollect8">Файлы, передаваемые между пользователями</li>
+                    <li data-lang="dontCollect7">Файлы, передаваемые между пользователями</li>
+                    <li data-lang="dontCollect8">Историю подключений к чатам</li>
                 </ul>
                 
                 <div class="privacy-highlight">
-                    <p data-lang="privacyHighlight2">Ваши сообщения и файлы никогда не проходят через наши серверы и не хранятся в каком-либо централизованном хранилище. Они существуют только на устройствах отправителя и получателя.</p>
+                    <p data-lang="privacyHighlight2">Ваши сообщения и файлы никогда не проходят через наши серверы и не хранятся в каком-либо централизованном хранилище. Они существуют только на устройствах отправителя и получателя после установки P2P соединения.</p>
                 </div>
             </div>
 
@@ -89,14 +104,14 @@
                 <h2 data-lang="technicalImplementation">Техническая реализация приватности</h2>
                 <p data-lang="technicalImplementationText">BlockChat использует следующие технологии для обеспечения приватности:</p>
                 
+                <h3 data-lang="blockchatidSystem">Система BlockChat ID</h3>
+                <p data-lang="blockchatidSystemText">Централизованный сервер управляет уникальными идентификаторами пользователей и чатами, но не имеет доступа к содержимому сообщений.</p>
+                
                 <h3 data-lang="p2pArchitecture">P2P Архитектура</h3>
-                <p data-lang="p2pArchitectureText">Приложение устанавливает прямое соединение между устройствами пользователей без промежуточных серверов для передачи данных.</p>
+                <p data-lang="p2pArchitectureText">После установления связи через BlockChat ID, приложение создает прямое соединение между устройствами пользователей без промежуточных серверов для передачи данных.</p>
                 
-                <h3 data-lang="signalingServer">Сигнальный сервер</h3>
-                <p data-lang="signalingServerText">Временный сигнальный сервер используется только для установления P2P соединения между пользователями и не имеет доступа к содержимому сообщений или файлов.</p>
-                
-                <h3 data-lang="groupChats">Групповые чаты</h3>
-                <p data-lang="groupChatsText">В групповых чатах сообщения передаются через децентрализованную сеть участников. Информация о участниках хранится только во время активной сессии чата.</p>
+                <h3 data-lang="signalingServer">Сервер BlockChat ID</h3>
+                <p data-lang="signalingServerText">Сервер используется только для регистрации пользователей, создания чатов и установления первоначального контакта между участниками. Он не участвует в передаче сообщений.</p>
             </div>
 
             <div class="privacy-section">
@@ -104,25 +119,40 @@
                 <p data-lang="encryptionSecurityText">BlockChat использует современные методы шифрования для защиты ваших данных:</p>
                 
                 <h3 data-lang="e2eEncryption">Сквозное шифрование (End-to-End Encryption)</h3>
-                <p data-lang="e2eEncryptionText">Все сообщения и файлы шифруются на устройстве отправителя и расшифровываются только на устройстве получателя с использованием алгоритма AES-GCM с ключом 256 бит.</p>
+                <p data-lang="e2eEncryptionText">Все сообщения и файлы шифруются на устройстве отправителя и расшифровываются только на устройстве получателя.</p>
                 
-                <h3 data-lang="keyExchange">Обмен ключами шифрования</h3>
-                <p data-lang="keyExchangeText">Ключи шифрования генерируются случайным образом для каждой сессии и передаются через установленное P2P соединение.</p>
+                <h3 data-lang="keyManagement">Управление ключами</h3>
+                <p data-lang="keyManagementText">Каждый пользователь имеет пару криптографических ключей. Публичный ключ хранится на сервере BlockChat ID для идентификации, приватный ключ хранится только на устройстве пользователя.</p>
                 
-                <h3 data-lang="fileEncryption">Шифрование файлов</h3>
-                <p data-lang="fileEncryptionText">Все передаваемые файлы автоматически шифруются перед отправкой и расшифровываются только на устройстве получателя.</p>
+                <h3 data-lang="chatSecurity">Безопасность чатов</h3>
+                <p data-lang="chatSecurityText">6-значные коды чатов генерируются случайным образом и используются только для подключения участников. Сервер BlockChat ID не имеет доступа к содержимому чатов.</p>
             </div>
 
             <div class="privacy-section">
                 <h2 data-lang="dataStorage">Хранение данных</h2>
-                <p data-lang="dataStorageText">BlockChat обеспечивает локальное хранение всех данных:</p>
+                <p data-lang="dataStorageText">BlockChat обеспечивает защищенное хранение данных:</p>
                 
                 <ul>
                     <li data-lang="storage1">История сообщений хранится только на вашем устройстве</li>
-                    <li data-lang="storage2">Полученные файлы сохраняются только с вашего явного согласия</li>
-                    <li data-lang="storage3">Настройки приложения хранятся локально на вашем устройстве</li>
-                    <li data-lang="storage4">При переустановке приложения все данные безвозвратно удаляются</li>
+                    <li data-lang="storage2">BlockChat ID и настройки сохраняются локально</li>
+                    <li data-lang="storage3">Приватные ключи никогда не покидают ваше устройство</li>
+                    <li data-lang="storage4">Сервер BlockChat ID хранит только информацию, необходимую для идентификации и подключения</li>
+                    <li data-lang="storage5">При удалении аккаунта все данные немедленно удаляются с сервера</li>
                 </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2 data-lang="userControl">Контроль пользователя</h2>
+                <p data-lang="userControlText">Вы имеете полный контроль над своими данными:</p>
+                
+                <h3 data-lang="accountManagement">Управление аккаунтом</h3>
+                <p data-lang="accountManagementText">Вы можете в любой момент изменить никнейм, просмотреть свой BlockChat ID или полностью удалить аккаунт через настройки приложения.</p>
+                
+                <h3 data-lang="dataExport">Экспорт данных</h3>
+                <p data-lang="dataExportText">Вся ваша история сообщений хранится локально и может быть просмотрена только через приложение BlockChat.</p>
+                
+                <h3 data-lang="chatManagement">Управление чатами</h3>
+                <p data-lang="chatManagementText">Вы можете создавать чаты, присоединяться к ним по кодам и покидать чаты в любое время.</p>
             </div>
 
             <div class="privacy-section">
@@ -154,7 +184,7 @@
 
             <div class="privacy-section">   
                 <div class="privacy-highlight">
-                    <p data-lang="lastUpdated">Последнее обновление: 28 сентября 2025 года</p>
+                    <p data-lang="lastUpdated">Последнее обновление: 18 октября 2025 года</p>
                 </div>
             </div>
         </div>
@@ -230,30 +260,71 @@
                 privacySubheader: "Learn how BlockChat protects your privacy and ensures the security of your messages",
                 home: "Home",
                 privacyPrinciples: "BlockChat Privacy Principles",
-                privacyPrinciplesText: "BlockChat is a decentralized P2P messenger built on the principle of complete user privacy. Unlike traditional messengers, we do not store or have access to your personal data and messages.",
-                privacyHighlight1: "BlockChat does not store your messages on servers. All messages are transmitted directly between users' devices through encrypted P2P connections.",
+                privacyPrinciplesText: "BlockChat is a decentralized P2P messenger with BlockChat ID system, built on the principle of complete user privacy. Unlike traditional messengers, we provide secure communication through unique identifiers without storing personal data.",
+                privacyHighlight1: "BlockChat uses the BlockChat ID system to identify users. Your messages are transmitted directly between devices through encrypted P2P connections after establishing connection via BlockChat ID server.",
+                dataWeCollect: "What data we collect for BlockChat ID operation",
+                dataWeCollectText: "To ensure the operation of the BlockChat ID system, we temporarily store:",
+                collect1: "BlockChat ID (unique user identifier)",
+                collect2: "User nickname (display name)",
+                collect3: "Public encryption key",
+                collect4: "IP address (only for establishing P2P connection)",
+                collect5: "Information about created chats and their participants",
+                dataWeCollectText2: "This data is necessary for the functioning of the identification system and user connections. It is stored only during user activity in the system.",
                 dataWeDontCollect: "What data we do NOT collect",
                 dataWeDontCollectText: "Unlike most messengers, BlockChat deliberately does not collect:",
-                dontCollect1: "Personal user data (name, email, phone number)",
+                dontCollect1: "Personal data (name, email, phone number)",
                 dontCollect2: "Contacts from your address book",
-                dontCollect3: "Message history and correspondence",
-                dontCollect4: "Message metadata (sending time, recipients)",
+                dontCollect3: "Message content and correspondence",
+                dontCollect4: "Message metadata (sending time, content)",
                 dontCollect5: "Geolocation data",
                 dontCollect6: "Information about devices on the network",
-                privacyHighlight2: "Your messages never pass through our servers and are not stored in any centralized storage. They exist only on the sender's and recipient's devices.",
+                dontCollect7: "Files transferred between users",
+                dontCollect8: "Chat connection history",
+                privacyHighlight2: "Your messages and files never pass through our servers and are not stored in any centralized storage. They exist only on the sender's and recipient's devices after establishing P2P connection.",
+                technicalImplementation: "Technical implementation of privacy",
+                technicalImplementationText: "BlockChat uses the following technologies to ensure privacy:",
+                blockchatidSystem: "BlockChat ID System",
+                blockchatidSystemText: "Centralized server manages unique user identifiers and chats, but does not have access to message content.",
+                p2pArchitecture: "P2P Architecture",
+                p2pArchitectureText: "After establishing connection through BlockChat ID, the application creates direct connection between users' devices without intermediate servers for data transmission.",
+                signalingServer: "BlockChat ID Server",
+                signalingServerText: "The server is used only for user registration, chat creation and establishing initial contact between participants. It does not participate in message transmission.",
                 encryptionSecurity: "Encryption and Security",
                 encryptionSecurityText: "BlockChat uses modern encryption methods to protect your data:",
                 e2eEncryption: "End-to-End Encryption",
-                e2eEncryptionText: "All messages are encrypted on the sender's device and decrypted only on the recipient's device. Even if messages passed through our servers (which they don't), we wouldn't be able to read them.",
+                e2eEncryptionText: "All messages and files are encrypted on the sender's device and decrypted only on the recipient's device.",
+                keyManagement: "Key Management",
+                keyManagementText: "Each user has a pair of cryptographic keys. The public key is stored on the BlockChat ID server for identification, the private key is stored only on the user's device.",
+                chatSecurity: "Chat Security",
+                chatSecurityText: "6-digit chat codes are randomly generated and used only for connecting participants. The BlockChat ID server does not have access to chat content.",
+                dataStorage: "Data storage",
+                dataStorageText: "BlockChat provides secure data storage:",
+                storage1: "Message history is stored only on your device",
+                storage2: "BlockChat ID and settings are saved locally",
+                storage3: "Private keys never leave your device",
+                storage4: "BlockChat ID server stores only information necessary for identification and connection",
+                storage5: "When deleting an account, all data is immediately removed from the server",
+                userControl: "User Control",
+                userControlText: "You have full control over your data:",
+                accountManagement: "Account Management",
+                accountManagementText: "You can change your nickname, view your BlockChat ID, or completely delete your account at any time through the application settings.",
+                dataExport: "Data Export",
+                dataExportText: "All your message history is stored locally and can only be viewed through the BlockChat application.",
+                chatManagement: "Chat Management",
+                chatManagementText: "You can create chats, join them by codes, and leave chats at any time.",
                 thirdPartyServices: "Third-party services and integrations",
                 thirdPartyServicesText1: "BlockChat does not use third-party analytics services, advertising networks, or trackers that could collect your data.",
                 thirdPartyServicesText2: "The only exception is application distribution services (such as GitHub Releases), which may collect anonymous download statistics in accordance with their privacy policies.",
+                updatesSupport: "Updates and support",
+                updatesSupportText1: "The application checks for updates through the official BlockChat website. Only your application version number is transmitted during the check.",
+                updatesSupportText2: "Error reports and feature requests are sent voluntarily through GitHub Issues and contain only information that you explicitly specified in the report.",
                 policyChanges: "Changes to the privacy policy",
                 policyChangesText1: "We may periodically update this privacy policy. We will notify you of any changes through:",
                 policyChanges1: "Official BlockChat website",
                 policyChanges2: "Release notes of new application versions",
+                policyChanges3: "Notifications in the application itself",
                 policyChangesText2: "Continued use of BlockChat after changes are made means you agree to the updated privacy policy.",
-                lastUpdated: "Last updated: September 28, 2025",
+                lastUpdated: "Last updated: October 18, 2025",
                 product: "Product",
                 features: "Features",
                 howitworks: "How to connect",
@@ -270,59 +341,7 @@
                 featuredevelopment: "This feature is currently under development. We are working on improving the website and will soon add this feature.",
                 okay: "Okay",
                 BlogFooter: "Blog",
-                ReleaseFooter: "Releases",
-                privacyTitle: "Privacy Policy - BlockChat",
-                privacyHeader: "Privacy Policy",
-                privacySubheader: "Learn how BlockChat protects your privacy and ensures the security of your messages",
-                home: "Home",
-                privacyPrinciples: "BlockChat Privacy Principles",
-                privacyPrinciplesText: "BlockChat is a decentralized P2P messenger built on the principle of complete user privacy. Unlike traditional messengers, we do not store or have access to your personal data and messages.",
-                privacyHighlight1: "BlockChat does not store your messages on servers. All messages are transmitted directly between users' devices through encrypted P2P connections.",
-                dataWeDontCollect: "What data we do NOT collect",
-                dataWeDontCollectText: "Unlike most messengers, BlockChat deliberately does not collect:",
-                dontCollect1: "Personal user data (name, email, phone number)",
-                dontCollect2: "Contacts from your address book",
-                dontCollect3: "Message history and correspondence",
-                dontCollect4: "Message metadata (sending time, recipients)",
-                dontCollect5: "Geolocation data",
-                dontCollect6: "Information about devices on the network",
-                dontCollect7: "User IP addresses (except for temporary processing to establish P2P connection)",
-                dontCollect8: "Files transferred between users",
-                privacyHighlight2: "Your messages and files never pass through our servers and are not stored in any centralized storage. They exist only on the sender's and recipient's devices.",
-                technicalImplementation: "Technical implementation of privacy",
-                technicalImplementationText: "BlockChat uses the following technologies to ensure privacy:",
-                p2pArchitecture: "P2P Architecture",
-                p2pArchitectureText: "The application establishes direct connections between users' devices without intermediate servers for data transmission.",
-                signalingServer: "Signaling server",
-                signalingServerText: "Temporary signaling server is used only to establish P2P connection between users and does not have access to message or file content.",
-                groupChats: "Group chats",
-                groupChatsText: "In group chats, messages are transmitted through a decentralized network of participants. Information about participants is stored only during active chat sessions.",
-                encryptionSecurity: "Encryption and Security",
-                encryptionSecurityText: "BlockChat uses modern encryption methods to protect your data:",
-                e2eEncryption: "End-to-End Encryption",
-                e2eEncryptionText: "All messages and files are encrypted on the sender's device and decrypted only on the recipient's device using AES-GCM algorithm with 256-bit key.",
-                keyExchange: "Encryption key exchange",
-                keyExchangeText: "Encryption keys are randomly generated for each session and transmitted through established P2P connection.",
-                fileEncryption: "File encryption",
-                fileEncryptionText: "All transferred files are automatically encrypted before sending and decrypted only on the recipient's device.",
-                dataStorage: "Data storage",
-                dataStorageText: "BlockChat provides local storage of all data:",
-                storage1: "Message history is stored only on your device",
-                storage2: "Received files are saved only with your explicit consent",
-                storage3: "Application settings are stored locally on your device",
-                storage4: "When reinstalling the application, all data is permanently deleted",
-                thirdPartyServices: "Third-party services and integrations",
-                thirdPartyServicesText1: "BlockChat does not use third-party analytics services, advertising networks, or trackers that could collect your data.",
-                thirdPartyServicesText2: "The only exception is application distribution services (such as GitHub Releases), which may collect anonymous download statistics in accordance with their privacy policies.",
-                updatesSupport: "Updates and support",
-                updatesSupportText1: "The application checks for updates through the official BlockChat website. Only your application version number is transmitted during the check.",
-                updatesSupportText2: "Error reports and feature requests are sent voluntarily through GitHub Issues and contain only information that you explicitly specified in the report.",
-                policyChanges: "Changes to the privacy policy",
-                policyChangesText1: "We may periodically update this privacy policy. We will notify you of any changes through:",
-                policyChanges1: "Official BlockChat website",
-                policyChanges2: "Release notes of new application versions",
-                policyChanges3: "Notifications in the application itself",
-                policyChangesText2: "Continued use of BlockChat after changes are made means you agree to the updated privacy policy.",
+                ReleaseFooter: "Releases"
             },
             ru: {
                 privacyTitle: "Политика конфиденциальности - BlockChat",
@@ -330,30 +349,71 @@
                 privacySubheader: "Узнайте, как BlockChat защищает вашу приватность и обеспечивает безопасность ваших сообщений",
                 home: "На главную",
                 privacyPrinciples: "Принципы конфиденциальности BlockChat",
-                privacyPrinciplesText: "BlockChat — это децентрализованный P2P мессенджер, созданный с принципом полной приватности пользователей. В отличие от традиционных мессенджеров, мы не храним и не имеем доступа к вашим личным данным и сообщениям.",
-                privacyHighlight1: "BlockChat не хранит ваши сообщения на серверах. Все сообщения передаются напрямую между устройствами пользователей через зашифрованные P2P соединения.",
+                privacyPrinciplesText: "BlockChat — это децентрализованный P2P мессенджер с системой BlockChat ID, созданный с принципом полной приватности пользователей. В отличие от традиционных мессенджеров, мы обеспечиваем безопасное общение через уникальные идентификаторы без хранения личных данных.",
+                privacyHighlight1: "BlockChat использует систему BlockChat ID для идентификации пользователей. Ваши сообщения передаются напрямую между устройствами через зашифрованные P2P соединения после установки связи через сервер BlockChat ID.",
+                dataWeCollect: "Какие данные мы собираем для работы BlockChat ID",
+                dataWeCollectText: "Для обеспечения работы системы BlockChat ID мы временно храним:",
+                collect1: "BlockChat ID (уникальный идентификатор пользователя)",
+                collect2: "Никнейм пользователя (отображаемое имя)",
+                collect3: "Публичный ключ шифрования",
+                collect4: "IP-адрес (только для установки P2P соединения)",
+                collect5: "Информацию о созданных чатах и их участниках",
+                dataWeCollectText2: "Эти данные необходимы для функционирования системы идентификации и подключения пользователей. Они хранятся только во время активности пользователя в системе.",
                 dataWeDontCollect: "Какие данные мы НЕ собираем",
                 dataWeDontCollectText: "В отличие от большинства мессенджеров, BlockChat сознательно не собирает:",
-                dontCollect1: "Персональные данные пользователей (имя, email, номер телефона)",
+                dontCollect1: "Персональные данные (имя, email, номер телефона)",
                 dontCollect2: "Контакты из вашей адресной книги",
-                dontCollect3: "Историю сообщений и переписки",
-                dontCollect4: "Метаданные сообщений (время отправки, получатели)",
+                dontCollect3: "Содержание сообщений и переписки",
+                dontCollect4: "Метаданные сообщений (время отправки, содержимое)",
                 dontCollect5: "Геолокационные данные",
                 dontCollect6: "Информацию об устройствах в сети",
-                privacyHighlight2: "Ваши сообщения никогда не проходят через наши серверы и не хранятся в каком-либо централизованном хранилище. Они существуют только на устройствах отправителя и получателя.",
+                dontCollect7: "Файлы, передаваемые между пользователями",
+                dontCollect8: "Историю подключений к чатам",
+                privacyHighlight2: "Ваши сообщения и файлы никогда не проходят через наши серверы и не хранятся в каком-либо централизованном хранилище. Они существуют только на устройствах отправителя и получателя после установки P2P соединения.",
+                technicalImplementation: "Техническая реализация приватности",
+                technicalImplementationText: "BlockChat использует следующие технологии для обеспечения приватности:",
+                blockchatidSystem: "Система BlockChat ID",
+                blockchatidSystemText: "Централизованный сервер управляет уникальными идентификаторами пользователей и чатами, но не имеет доступа к содержимому сообщений.",
+                p2pArchitecture: "P2P Архитектура",
+                p2pArchitectureText: "После установления связи через BlockChat ID, приложение создает прямое соединение между устройствами пользователей без промежуточных серверов для передачи данных.",
+                signalingServer: "Сервер BlockChat ID",
+                signalingServerText: "Сервер используется только для регистрации пользователей, создания чатов и установления первоначального контакта между участниками. Он не участвует в передаче сообщений.",
                 encryptionSecurity: "Шифрование и безопасность",
                 encryptionSecurityText: "BlockChat использует современные методы шифрования для защиты ваших данных:",
                 e2eEncryption: "Сквозное шифрование (End-to-End Encryption)",
-                e2eEncryptionText: "Все сообщения шифруются на устройстве отправителя и расшифровываются только на устройстве получателя. Даже если бы сообщения проходили через наши серверы (чего не происходит), мы не смогли бы их прочитать.",
+                e2eEncryptionText: "Все сообщения и файлы шифруются на устройстве отправителя и расшифровываются только на устройстве получателя.",
+                keyManagement: "Управление ключами",
+                keyManagementText: "Каждый пользователь имеет пару криптографических ключей. Публичный ключ хранится на сервере BlockChat ID для идентификации, приватный ключ хранится только на устройстве пользователя.",
+                chatSecurity: "Безопасность чатов",
+                chatSecurityText: "6-значные коды чатов генерируются случайным образом и используются только для подключения участников. Сервер BlockChat ID не имеет доступа к содержимому чатов.",
+                dataStorage: "Хранение данных",
+                dataStorageText: "BlockChat обеспечивает защищенное хранение данных:",
+                storage1: "История сообщений хранится только на вашем устройстве",
+                storage2: "BlockChat ID и настройки сохраняются локально",
+                storage3: "Приватные ключи никогда не покидают ваше устройство",
+                storage4: "Сервер BlockChat ID хранит только информацию, необходимую для идентификации и подключения",
+                storage5: "При удалении аккаунта все данные немедленно удаляются с сервера",
+                userControl: "Контроль пользователя",
+                userControlText: "Вы имеете полный контроль над своими данными:",
+                accountManagement: "Управление аккаунтом",
+                accountManagementText: "Вы можете в любой момент изменить никнейм, просмотреть свой BlockChat ID или полностью удалить аккаунт через настройки приложения.",
+                dataExport: "Экспорт данных",
+                dataExportText: "Вся ваша история сообщений хранится локально и может быть просмотрена только через приложение BlockChat.",
+                chatManagement: "Управление чатами",
+                chatManagementText: "Вы можете создавать чаты, присоединяться к ним по кодам и покидать чаты в любое время.",
                 thirdPartyServices: "Сторонние услуги и интеграции",
                 thirdPartyServicesText1: "BlockChat не использует сторонние аналитические сервисы, рекламные сети или трекеры, которые могли бы собирать ваши данные.",
                 thirdPartyServicesText2: "Единственное исключение — службы распространения приложений (такие как GitHub Releases), которые могут собирать анонимную статистику загрузок в соответствии со своими политиками конфиденциальности.",
+                updatesSupport: "Обновления и поддержка",
+                updatesSupportText1: "Приложение проверяет наличие обновлений через официальный сайт BlockChat. При проверке передается только номер версии вашего приложения.",
+                updatesSupportText2: "Сообщения об ошибках и запросы функций отправляются добровольно через GitHub Issues и содержат только информацию, которую вы явно указали в отчете.",
                 policyChanges: "Изменения в политике конфиденциальности",
                 policyChangesText1: "Мы можем периодически обновлять эту политику конфиденциальности. О любых изменениях мы будем уведомлять через:",
                 policyChanges1: "Официальный сайт BlockChat",
                 policyChanges2: "Релиз-ноты новых версий приложения",
+                policyChanges3: "Уведомления в самом приложении",
                 policyChangesText2: "Продолжение использования BlockChat после внесения изменений означает ваше согласие с обновленной политикой конфиденциальности.",
-                lastUpdated: "Последнее обновление: 28 сентября 2025 года",
+                lastUpdated: "Последнее обновление: 18 октября 2025 года",
                 product: "Продукт",
                 features: "Особенности",
                 howitworks: "Как подключиться",
@@ -370,59 +430,7 @@
                 featuredevelopment: "Данная функция находится в разработке. Мы работаем над улучшением сайта и скоро добавим эту возможность.",
                 okay: "Понятно",
                 BlogFooter: "Блог",
-                ReleaseFooter: "Релизы",
-                privacyTitle: "Политика конфиденциальности - BlockChat",
-                privacyHeader: "Политика конфиденциальности",
-                privacySubheader: "Узнайте, как BlockChat защищает вашу приватность и обеспечивает безопасность ваших сообщений",
-                home: "На главную",
-                privacyPrinciples: "Принципы конфиденциальности BlockChat",
-                privacyPrinciplesText: "BlockChat — это децентрализованный P2P мессенджер, созданный с принципом полной приватности пользователей. В отличие от традиционных мессенджеров, мы не храним и не имеем доступа к вашим личным данным и сообщениям.",
-                privacyHighlight1: "BlockChat не хранит ваши сообщения на серверах. Все сообщения передаются напрямую между устройствами пользователей через зашифрованные P2P соединения.",
-                dataWeDontCollect: "Какие данные мы НЕ собираем",
-                dataWeDontCollectText: "В отличие от большинства мессенджеров, BlockChat сознательно не собирает:",
-                dontCollect1: "Персональные данные пользователей (имя, email, номер телефона)",
-                dontCollect2: "Контакты из вашей адресной книги",
-                dontCollect3: "Историю сообщений и переписки",
-                dontCollect4: "Метаданные сообщений (время отправки, получатели)",
-                dontCollect5: "Геолокационные данные",
-                dontCollect6: "Информацию об устройствах в сети",
-                dontCollect7: "IP-адреса пользователей (кроме временной обработки для установления P2P соединения)",
-                dontCollect8: "Файлы, передаваемые между пользователями",
-                privacyHighlight2: "Ваши сообщения и файлы никогда не проходят через наши серверы и не хранятся в каком-либо централизованном хранилище. Они существуют только на устройствах отправителя и получателя.",
-                technicalImplementation: "Техническая реализация приватности",
-                technicalImplementationText: "BlockChat использует следующие технологии для обеспечения приватности:",
-                p2pArchitecture: "P2P Архитектура",
-                p2pArchitectureText: "Приложение устанавливает прямое соединение между устройствами пользователей без промежуточных серверов для передачи данных.",
-                signalingServer: "Сигнальный сервер",
-                signalingServerText: "Временный сигнальный сервер используется только для установления P2P соединения между пользователями и не имеет доступа к содержимому сообщений или файлов.",
-                groupChats: "Групповые чаты",
-                groupChatsText: "В групповых чатах сообщения передаются через децентрализованную сеть участников. Информация о участниках хранится только во время активной сессии чата.",
-                encryptionSecurity: "Шифрование и безопасность",
-                encryptionSecurityText: "BlockChat использует современные методы шифрования для защиты ваших данных:",
-                e2eEncryption: "Сквозное шифрование (End-to-End Encryption)",
-                e2eEncryptionText: "Все сообщения и файлы шифруются на устройстве отправителя и расшифровываются только на устройстве получателя с использованием алгоритма AES-GCM с ключом 256 бит.",
-                keyExchange: "Обмен ключами шифрования",
-                keyExchangeText: "Ключи шифрования генерируются случайным образом для каждой сессии и передаются через установленное P2P соединение.",
-                fileEncryption: "Шифрование файлов",
-                fileEncryptionText: "Все передаваемые файлы автоматически шифруются перед отправкой и расшифровываются только на устройстве получателя.",
-                dataStorage: "Хранение данных",
-                dataStorageText: "BlockChat обеспечивает локальное хранение всех данных:",
-                storage1: "История сообщений хранится только на вашем устройстве",
-                storage2: "Полученные файлы сохраняются только с вашего явного согласия",
-                storage3: "Настройки приложения хранятся локально на вашем устройстве",
-                storage4: "При переустановке приложения все данные безвозвратно удаляются",
-                thirdPartyServices: "Сторонние услуги и интеграции",
-                thirdPartyServicesText1: "BlockChat не использует сторонние аналитические сервисы, рекламные сети или трекеры, которые могли бы собирать ваши данные.",
-                thirdPartyServicesText2: "Единственное исключение — службы распространения приложений (такие как GitHub Releases), которые могут собирать анонимную статистику загрузок в соответствии со своими политиками конфиденциальности.",
-                updatesSupport: "Обновления и поддержка",
-                updatesSupportText1: "Приложение проверяет наличие обновлений через официальный сайт BlockChat. При проверке передается только номер версии вашего приложения.",
-                updatesSupportText2: "Сообщения об ошибках и запросы функций отправляются добровольно через GitHub Issues и содержат только информацию, которую вы явно указали в отчете.",
-                policyChanges: "Изменения в политике конфиденциальности",
-                policyChangesText1: "Мы можем периодически обновлять эту политику конфиденциальности. О любых изменениях мы будем уведомлять через:",
-                policyChanges1: "Официальный сайт BlockChat",
-                policyChanges2: "Релиз-ноты новых версий приложения",
-                policyChanges3: "Уведомления в самом приложении",
-                policyChangesText2: "Продолжение использования BlockChat после внесения изменений означает ваше согласие с обновленной политикой конфиденциальности.",
+                ReleaseFooter: "Релизы"
             }
         };
 
